@@ -64,17 +64,19 @@ function App() {
     setTimeout(() => {
       const segmentAngle = 360 / categories.length; // 60 degrees per segment
       
-      // Calculate which segment the pointer (top) lands on
-      // Since segments now start from -90 degrees (top), we need to adjust
+      // Get the current rotation
       const currentRotation = finalRotation % 360;
       
-      // Normalize the rotation to be between 0 and 360
-      const normalizedRotation = currentRotation < 0 ? currentRotation + 360 : currentRotation;
+      // Since the pointer is at the top (0 degrees) and segments start at -90,
+      // we need to find which segment is currently at the top position
+      // Add 90 to compensate for the -90 start, then reverse direction
+      const adjustedAngle = (90 - currentRotation + 360) % 360;
+      const selectedIndex = Math.floor(adjustedAngle / segmentAngle) % categories.length;
       
-      // Calculate which segment the top pointer hits
-      // We add 90 degrees because our segments start at -90 (top)
-      const effectiveAngle = (normalizedRotation + 90) % 360;
-      const selectedIndex = Math.floor(effectiveAngle / segmentAngle) % categories.length;
+      console.log('Current rotation:', currentRotation);
+      console.log('Adjusted angle:', adjustedAngle);
+      console.log('Selected index:', selectedIndex);
+      console.log('Selected category:', categories[selectedIndex].name);
       
       setSelectedCategory(categories[selectedIndex].name);
       setIsSpinning(false);
