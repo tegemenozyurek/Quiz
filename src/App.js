@@ -110,34 +110,23 @@ function App() {
                 className={`wheel ${isSpinning ? 'spinning' : ''}`}
                 style={{ transform: `rotate(${wheelRotation}deg)` }}
               >
-                <img 
-                  src="/wheel.png" 
-                  alt="Trivia Wheel" 
-                  className="wheel-image"
-                />
-                <div className="category-overlay">
-                  {categories.map((category, index) => {
-                    const angle = (360 / categories.length) * index;
-                    const radius = 90; // Distance from center
-                    const angleRad = (angle - 90) * (Math.PI / 180); // -90 to start from top
-                    const x = 150 + radius * Math.cos(angleRad);
-                    const y = 150 + radius * Math.sin(angleRad);
-                    
-                    return (
-                      <div
-                        key={category.name}
-                        className="category-label"
-                        style={{
-                          left: `${x}px`,
-                          top: `${y}px`,
-                          transform: 'translate(-50%, -50%)'
-                        }}
-                      >
-                        <div className="category-emoji">{category.emoji}</div>
-                        <div className="category-text">{category.name.toUpperCase()}</div>
-                      </div>
-                    );
-                  })}
+                {categories.map((category, index) => (
+                  <div
+                    key={category.name}
+                    className="wheel-segment"
+                    style={{
+                      transform: `rotate(${index * 60}deg)`,
+                      backgroundColor: category.color
+                    }}
+                  >
+                    <div className="segment-content">
+                      <span className="emoji">{category.emoji}</span>
+                      <span className="category-name">{category.name}</span>
+                    </div>
+                  </div>
+                ))}
+                <div className="wheel-center">
+                  <span className="spin-text">SPIN</span>
                 </div>
               </div>
               <div className="wheel-pointer">▼</div>
@@ -147,7 +136,7 @@ function App() {
               onClick={spinWheel}
               disabled={isSpinning}
             >
-              {isSpinning ? 'Spinning...' : 'SPIN!'}
+              {isSpinning ? 'Spinning...' : 'CLICK TO SPIN!'}
             </button>
           </div>
         )}
