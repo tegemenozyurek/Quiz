@@ -62,21 +62,31 @@ function App() {
     setWheelRotation(finalRotation);
 
     setTimeout(() => {
-      const segmentAngle = 360 / categories.length; // 60 degrees per segment
+      // Simple approach: divide the rotation into 6 equal parts
+      // Each segment is 60 degrees
+      const segmentAngle = 360 / categories.length; // 60 degrees
       
-      // Get the current rotation
-      const currentRotation = finalRotation % 360;
+      // Get the final rotation and normalize it to 0-360
+      let normalizedRotation = finalRotation % 360;
+      if (normalizedRotation < 0) normalizedRotation += 360;
       
-      // Since the pointer is at the top (0 degrees) and segments start at -90,
-      // we need to find which segment is currently at the top position
-      // Add 90 to compensate for the -90 start, then reverse direction
-      const adjustedAngle = (90 - currentRotation + 360) % 360;
-      const selectedIndex = Math.floor(adjustedAngle / segmentAngle) % categories.length;
+      // Since our first segment (toys) starts at the top and segments go clockwise,
+      // we need to calculate which segment the pointer hits
+      // The pointer is at the top (0 degrees), so we calculate directly
+      const segmentIndex = Math.floor(normalizedRotation / segmentAngle);
       
-      console.log('Current rotation:', currentRotation);
-      console.log('Adjusted angle:', adjustedAngle);
+      // Make sure index is within bounds
+      const selectedIndex = segmentIndex % categories.length;
+      
+      console.log('=== WHEEL DEBUG ===');
+      console.log('Final rotation:', finalRotation);
+      console.log('Normalized rotation:', normalizedRotation);
+      console.log('Segment angle:', segmentAngle);
+      console.log('Segment index:', segmentIndex);
       console.log('Selected index:', selectedIndex);
+      console.log('Categories:', categories.map((cat, i) => `${i}: ${cat.name}`));
       console.log('Selected category:', categories[selectedIndex].name);
+      console.log('===================');
       
       setSelectedCategory(categories[selectedIndex].name);
       setIsSpinning(false);
@@ -223,6 +233,9 @@ function App() {
         {gameState === 'question' && currentQuestion && (
           <div className="question-container">
             <h2>Category: {selectedCategory}</h2>
+            <div style={{fontSize: '0.8rem', color: '#ccc', marginBottom: '10px'}}>
+              Debug: Selected = "{selectedCategory}", Questions available for: {Object.keys(questions).join(', ')}
+            </div>
             <div className="question-box">
               <h3>{currentQuestion.question}</h3>
               <div className="options">
