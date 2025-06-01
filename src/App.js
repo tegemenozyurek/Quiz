@@ -106,29 +106,101 @@ function App() {
           <div className="wheel-container">
             <h2>Spin the Wheel!</h2>
             <div className="wheel-wrapper">
-              <div 
+              <svg 
                 className={`wheel ${isSpinning ? 'spinning' : ''}`}
                 style={{ transform: `rotate(${wheelRotation}deg)` }}
+                width="300" 
+                height="300" 
+                viewBox="0 0 300 300"
               >
-                {categories.map((category, index) => (
-                  <div
-                    key={category.name}
-                    className="wheel-segment"
-                    style={{
-                      transform: `rotate(${index * 60}deg)`,
-                      backgroundColor: category.color
-                    }}
-                  >
-                    <div className="segment-content">
-                      <span className="emoji">{category.emoji}</span>
-                      <span className="category-name">{category.name}</span>
-                    </div>
-                  </div>
-                ))}
-                <div className="wheel-center">
-                  <span className="spin-text">SPIN</span>
-                </div>
-              </div>
+                {categories.map((category, index) => {
+                  const angle = 60; // 360/6 = 60 degrees per segment
+                  const startAngle = index * angle;
+                  const endAngle = (index + 1) * angle;
+                  
+                  // Convert to radians
+                  const startRad = (startAngle * Math.PI) / 180;
+                  const endRad = (endAngle * Math.PI) / 180;
+                  
+                  // SVG path for pie slice
+                  const radius = 140;
+                  const centerX = 150;
+                  const centerY = 150;
+                  
+                  const x1 = centerX + radius * Math.cos(startRad);
+                  const y1 = centerY + radius * Math.sin(startRad);
+                  const x2 = centerX + radius * Math.cos(endRad);
+                  const y2 = centerY + radius * Math.sin(endRad);
+                  
+                  const pathData = [
+                    `M ${centerX} ${centerY}`,
+                    `L ${x1} ${y1}`,
+                    `A ${radius} ${radius} 0 0 1 ${x2} ${y2}`,
+                    `Z`
+                  ].join(' ');
+                  
+                  // Text position (middle of segment)
+                  const textAngle = startAngle + angle / 2;
+                  const textRad = (textAngle * Math.PI) / 180;
+                  const textRadius = radius * 0.7;
+                  const textX = centerX + textRadius * Math.cos(textRad);
+                  const textY = centerY + textRadius * Math.sin(textRad);
+                  
+                  return (
+                    <g key={category.name}>
+                      <path
+                        d={pathData}
+                        fill={category.color}
+                        stroke="#fff"
+                        strokeWidth="3"
+                      />
+                      <text
+                        x={textX}
+                        y={textY - 8}
+                        textAnchor="middle"
+                        fontSize="20"
+                        fill="white"
+                        fontWeight="bold"
+                        style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
+                      >
+                        {category.emoji}
+                      </text>
+                      <text
+                        x={textX}
+                        y={textY + 12}
+                        textAnchor="middle"
+                        fontSize="10"
+                        fill="white"
+                        fontWeight="bold"
+                        style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}
+                      >
+                        {category.name.toUpperCase()}
+                      </text>
+                    </g>
+                  );
+                })}
+                
+                {/* Center white circle with SPIN text */}
+                <circle 
+                  cx="150" 
+                  cy="150" 
+                  r="40" 
+                  fill="white" 
+                  stroke="#ddd" 
+                  strokeWidth="3"
+                />
+                <text
+                  x="150"
+                  y="158"
+                  textAnchor="middle"
+                  fontSize="16"
+                  fill="#333"
+                  fontWeight="900"
+                  letterSpacing="1px"
+                >
+                  SPIN
+                </text>
+              </svg>
               <div className="wheel-pointer">▼</div>
             </div>
             <button 
