@@ -105,27 +105,91 @@ function App() {
           <div className="wheel-container">
             <h2>Spin the Wheel!</h2>
             <div className="wheel-wrapper">
-              <div 
+              <svg 
                 className={`wheel ${isSpinning ? 'spinning' : ''}`}
                 style={{ transform: `rotate(${wheelRotation}deg)` }}
+                width="300" 
+                height="300" 
+                viewBox="0 0 300 300"
               >
-                {categories.map((category, index) => (
-                  <div
-                    key={category.name}
-                    className="wheel-segment"
-                    style={{
-                      transform: `rotate(${index * 60}deg)`,
-                      backgroundColor: category.color
-                    }}
-                  >
-                    <div className="segment-content">
-                      <span className="emoji">{category.emoji}</span>
-                      <span className="category-name">{category.name}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="wheel-pointer">▲</div>
+                {categories.map((category, index) => {
+                  const angle = (360 / categories.length) * index;
+                  const nextAngle = (360 / categories.length) * (index + 1);
+                  
+                  // Convert to radians
+                  const startAngle = (angle * Math.PI) / 180;
+                  const endAngle = (nextAngle * Math.PI) / 180;
+                  
+                  // Calculate path for pie slice
+                  const radius = 140;
+                  const centerX = 150;
+                  const centerY = 150;
+                  
+                  const x1 = centerX + radius * Math.cos(startAngle);
+                  const y1 = centerY + radius * Math.sin(startAngle);
+                  const x2 = centerX + radius * Math.cos(endAngle);
+                  const y2 = centerY + radius * Math.sin(endAngle);
+                  
+                  const largeArcFlag = (endAngle - startAngle) > Math.PI ? 1 : 0;
+                  
+                  const pathData = [
+                    `M ${centerX} ${centerY}`,
+                    `L ${x1} ${y1}`,
+                    `A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2}`,
+                    `Z`
+                  ].join(' ');
+                  
+                  // Text position
+                  const textAngle = startAngle + (endAngle - startAngle) / 2;
+                  const textRadius = radius * 0.7;
+                  const textX = centerX + textRadius * Math.cos(textAngle);
+                  const textY = centerY + textRadius * Math.sin(textAngle);
+                  
+                  return (
+                    <g key={category.name}>
+                      <path
+                        d={pathData}
+                        fill={category.color}
+                        stroke="#fff"
+                        strokeWidth="2"
+                      />
+                      <text
+                        x={textX}
+                        y={textY - 10}
+                        textAnchor="middle"
+                        fontSize="24"
+                        fill="white"
+                        fontWeight="bold"
+                        textShadow="1px 1px 2px rgba(0,0,0,0.5)"
+                      >
+                        {category.emoji}
+                      </text>
+                      <text
+                        x={textX}
+                        y={textY + 15}
+                        textAnchor="middle"
+                        fontSize="11"
+                        fill="white"
+                        fontWeight="bold"
+                        textShadow="1px 1px 2px rgba(0,0,0,0.5)"
+                      >
+                        {category.name.toUpperCase()}
+                      </text>
+                    </g>
+                  );
+                })}
+                
+                {/* Center circle */}
+                <circle 
+                  cx="150" 
+                  cy="150" 
+                  r="25" 
+                  fill="white" 
+                  stroke="#ccc" 
+                  strokeWidth="2"
+                />
+              </svg>
+              <div className="wheel-pointer">▼</div>
             </div>
             <button 
               className="spin-button" 
