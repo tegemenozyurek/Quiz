@@ -62,9 +62,19 @@ function App() {
     setWheelRotation(finalRotation);
 
     setTimeout(() => {
-      const segmentAngle = 360 / categories.length;
-      const normalizedRotation = (360 - (finalRotation % 360)) % 360;
-      const selectedIndex = Math.floor((normalizedRotation + segmentAngle / 2) / segmentAngle) % categories.length;
+      const segmentAngle = 360 / categories.length; // 60 degrees per segment
+      
+      // Calculate which segment the pointer (top) lands on
+      // Since segments now start from -90 degrees (top), we need to adjust
+      const currentRotation = finalRotation % 360;
+      
+      // Normalize the rotation to be between 0 and 360
+      const normalizedRotation = currentRotation < 0 ? currentRotation + 360 : currentRotation;
+      
+      // Calculate which segment the top pointer hits
+      // We add 90 degrees because our segments start at -90 (top)
+      const effectiveAngle = (normalizedRotation + 90) % 360;
+      const selectedIndex = Math.floor(effectiveAngle / segmentAngle) % categories.length;
       
       setSelectedCategory(categories[selectedIndex].name);
       setIsSpinning(false);
@@ -116,8 +126,9 @@ function App() {
               >
                 {categories.map((category, index) => {
                   const angle = 60; // 360/6 = 60 degrees per segment
-                  const startAngle = index * angle;
-                  const endAngle = (index + 1) * angle;
+                  // Start from -90 degrees (top) so first segment is at the pointer
+                  const startAngle = index * angle - 90;
+                  const endAngle = (index + 1) * angle - 90;
                   
                   // Convert to radians
                   const startRad = (startAngle * Math.PI) / 180;
