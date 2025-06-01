@@ -58,10 +58,18 @@ h1 {
   border-radius: 50%;
   transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+  cursor: pointer;
+}
+
+.wheel:hover {
+  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.4));
+  transform: scale(1.02);
+  transition: all 0.3s ease;
 }
 
 .wheel.spinning {
   transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: not-allowed;
 }
 
 .wheel-pointer {
@@ -72,30 +80,6 @@ h1 {
   z-index: 15;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-}
-
-.spin-button {
-  background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
-  border: none;
-  color: white;
-  padding: 15px 40px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-}
-
-.spin-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-}
-
-.spin-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 /* Question Styles */

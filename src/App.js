@@ -53,7 +53,7 @@ function App() {
   };
 
   const spinWheel = () => {
-    if (isSpinning) return;
+    if (isSpinning) return; // Prevent spinning if already spinning
     
     setIsSpinning(true);
     const spins = Math.floor(Math.random() * 5) + 5; // 5-10 spins
@@ -104,7 +104,7 @@ function App() {
         
         {gameState === 'wheel' && (
           <div className="wheel-container">
-            <h2>Spin the Wheel!</h2>
+            <h2>Click the Wheel to Spin!</h2>
             <div className="wheel-wrapper">
               <svg 
                 className={`wheel ${isSpinning ? 'spinning' : ''}`}
@@ -112,6 +112,7 @@ function App() {
                 width="300" 
                 height="300" 
                 viewBox="0 0 300 300"
+                onClick={spinWheel}
               >
                 {categories.map((category, index) => {
                   const angle = 60; // 360/6 = 60 degrees per segment
@@ -203,13 +204,6 @@ function App() {
               </svg>
               <div className="wheel-pointer">▼</div>
             </div>
-            <button 
-              className="spin-button" 
-              onClick={spinWheel}
-              disabled={isSpinning}
-            >
-              {isSpinning ? 'Spinning...' : 'CLICK TO SPIN!'}
-            </button>
           </div>
         )}
 
