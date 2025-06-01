@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: white;
+  font-family: 'Arial', sans-serif;
 }
 
 .App-logo {
@@ -14,18 +18,236 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+/* Wheel Styles */
+.wheel-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.wheel-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheel {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.wheel.spinning {
+  transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.wheel-segment {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: 100% 100%;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.segment-content {
+  transform: rotate(-30deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.emoji {
+  font-size: 1.5rem;
+}
+
+.category-name {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -15px;
+  font-size: 2rem;
+  color: #fff;
+  z-index: 10;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.spin-button {
+  background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.spin-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.spin-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Question Styles */
+.question-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.question-box {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.question-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.option-button {
+  background: linear-gradient(45deg, #4ECDC4, #44A08D);
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.option-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #5EDDD4, #54B0A0);
+}
+
+.progress {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* Result Styles */
+.result-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.result-container h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.final-score {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  background: rgba(255,255,255,0.2);
+  padding: 20px 30px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.play-again-button {
+  background: linear-gradient(45deg, #96CEB4, #FFEAA7);
+  border: none;
+  color: #333;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.play-again-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .wheel {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .question-box {
+    padding: 20px;
+  }
+  
+  .options {
+    grid-template-columns: 1fr;
+  }
+  
+  .option-button {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
 }
 
 @keyframes App-logo-spin {
