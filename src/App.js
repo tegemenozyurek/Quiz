@@ -57,13 +57,14 @@ function App() {
     
     setIsSpinning(true);
     const spins = Math.floor(Math.random() * 5) + 5; // 5-10 spins
-    const finalRotation = wheelRotation + (spins * 360) + Math.floor(Math.random() * 360);
+    const extraRotation = Math.floor(Math.random() * 360);
+    const finalRotation = wheelRotation + (spins * 360) + extraRotation;
     setWheelRotation(finalRotation);
 
     setTimeout(() => {
       const segmentAngle = 360 / categories.length;
-      const normalizedRotation = finalRotation % 360;
-      const selectedIndex = Math.floor((360 - normalizedRotation) / segmentAngle) % categories.length;
+      const normalizedRotation = (360 - (finalRotation % 360)) % 360;
+      const selectedIndex = Math.floor((normalizedRotation + segmentAngle / 2) / segmentAngle) % categories.length;
       
       setSelectedCategory(categories[selectedIndex].name);
       setIsSpinning(false);
@@ -105,90 +106,40 @@ function App() {
           <div className="wheel-container">
             <h2>Spin the Wheel!</h2>
             <div className="wheel-wrapper">
-              <svg 
+              <div 
                 className={`wheel ${isSpinning ? 'spinning' : ''}`}
                 style={{ transform: `rotate(${wheelRotation}deg)` }}
-                width="300" 
-                height="300" 
-                viewBox="0 0 300 300"
               >
-                {categories.map((category, index) => {
-                  const angle = (360 / categories.length) * index;
-                  const nextAngle = (360 / categories.length) * (index + 1);
-                  
-                  // Convert to radians
-                  const startAngle = (angle * Math.PI) / 180;
-                  const endAngle = (nextAngle * Math.PI) / 180;
-                  
-                  // Calculate path for pie slice
-                  const radius = 140;
-                  const centerX = 150;
-                  const centerY = 150;
-                  
-                  const x1 = centerX + radius * Math.cos(startAngle);
-                  const y1 = centerY + radius * Math.sin(startAngle);
-                  const x2 = centerX + radius * Math.cos(endAngle);
-                  const y2 = centerY + radius * Math.sin(endAngle);
-                  
-                  const largeArcFlag = (endAngle - startAngle) > Math.PI ? 1 : 0;
-                  
-                  const pathData = [
-                    `M ${centerX} ${centerY}`,
-                    `L ${x1} ${y1}`,
-                    `A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2}`,
-                    `Z`
-                  ].join(' ');
-                  
-                  // Text position
-                  const textAngle = startAngle + (endAngle - startAngle) / 2;
-                  const textRadius = radius * 0.7;
-                  const textX = centerX + textRadius * Math.cos(textAngle);
-                  const textY = centerY + textRadius * Math.sin(textAngle);
-                  
-                  return (
-                    <g key={category.name}>
-                      <path
-                        d={pathData}
-                        fill={category.color}
-                        stroke="#fff"
-                        strokeWidth="2"
-                      />
-                      <text
-                        x={textX}
-                        y={textY - 10}
-                        textAnchor="middle"
-                        fontSize="24"
-                        fill="white"
-                        fontWeight="bold"
-                        textShadow="1px 1px 2px rgba(0,0,0,0.5)"
-                      >
-                        {category.emoji}
-                      </text>
-                      <text
-                        x={textX}
-                        y={textY + 15}
-                        textAnchor="middle"
-                        fontSize="11"
-                        fill="white"
-                        fontWeight="bold"
-                        textShadow="1px 1px 2px rgba(0,0,0,0.5)"
-                      >
-                        {category.name.toUpperCase()}
-                      </text>
-                    </g>
-                  );
-                })}
-                
-                {/* Center circle */}
-                <circle 
-                  cx="150" 
-                  cy="150" 
-                  r="25" 
-                  fill="white" 
-                  stroke="#ccc" 
-                  strokeWidth="2"
+                <img 
+                  src="/wheel.png" 
+                  alt="Trivia Wheel" 
+                  className="wheel-image"
                 />
-              </svg>
+                <div className="category-overlay">
+                  {categories.map((category, index) => {
+                    const angle = (360 / categories.length) * index;
+                    const radius = 90; // Distance from center
+                    const angleRad = (angle - 90) * (Math.PI / 180); // -90 to start from top
+                    const x = 150 + radius * Math.cos(angleRad);
+                    const y = 150 + radius * Math.sin(angleRad);
+                    
+                    return (
+                      <div
+                        key={category.name}
+                        className="category-label"
+                        style={{
+                          left: `${x}px`,
+                          top: `${y}px`,
+                          transform: 'translate(-50%, -50%)'
+                        }}
+                      >
+                        <div className="category-emoji">{category.emoji}</div>
+                        <div className="category-text">{category.name.toUpperCase()}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
               <div className="wheel-pointer">▼</div>
             </div>
             <button 
