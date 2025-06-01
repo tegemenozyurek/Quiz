@@ -9,6 +9,9 @@ function App() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
   const [wheelRotation, setWheelRotation] = useState(0);
+  const [toysQuestions, setToysQuestions] = useState([]);
+  const [randomizedQuestions, setRandomizedQuestions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const categories = [
     { name: 'toys', emoji: '🧸', color: '#FF6B6B' },
@@ -19,37 +22,36 @@ function App() {
     { name: 'daily routines', emoji: '⏰', color: '#DDA0DD' }
   ];
 
-  const questions = {
-    toys: [
-      { question: "What toy spins around and around?", options: ["Top", "Ball", "Car", "Doll"], correct: 0 },
-      { question: "What do you build with blocks?", options: ["Tower", "Food", "Water", "Music"], correct: 0 },
-      { question: "What toy flies in the sky?", options: ["Car", "Kite", "Book", "Shoe"], correct: 1 }
-    ],
-    colors: [
-      { question: "What color do you get when you mix red and blue?", options: ["Green", "Purple", "Yellow", "Orange"], correct: 1 },
-      { question: "What color is the sun?", options: ["Blue", "Red", "Yellow", "Green"], correct: 2 },
-      { question: "What color is an apple usually?", options: ["Red", "Blue", "Purple", "Black"], correct: 0 }
-    ],
-    animals: [
-      { question: "What sound does a dog make?", options: ["Meow", "Woof", "Moo", "Oink"], correct: 1 },
-      { question: "What animal says 'moo'?", options: ["Dog", "Cat", "Cow", "Bird"], correct: 2 },
-      { question: "What animal hops?", options: ["Fish", "Rabbit", "Snake", "Elephant"], correct: 1 }
-    ],
-    "body parts": [
-      { question: "What do you see with?", options: ["Ears", "Eyes", "Nose", "Mouth"], correct: 1 },
-      { question: "What do you hear with?", options: ["Eyes", "Ears", "Hands", "Feet"], correct: 1 },
-      { question: "How many fingers are on one hand?", options: ["4", "5", "6", "7"], correct: 1 }
-    ],
-    food: [
-      { question: "What do bees make?", options: ["Milk", "Honey", "Bread", "Cheese"], correct: 1 },
-      { question: "What fruit is yellow and curved?", options: ["Apple", "Banana", "Orange", "Grape"], correct: 1 },
-      { question: "What do you drink to be healthy?", options: ["Soda", "Water", "Coffee", "Juice"], correct: 1 }
-    ],
-    "daily routines": [
-      { question: "What do you do when you wake up?", options: ["Sleep", "Brush teeth", "Go to bed", "Dream"], correct: 1 },
-      { question: "When do you eat breakfast?", options: ["Night", "Morning", "Afternoon", "Evening"], correct: 1 },
-      { question: "What do you do before bed?", options: ["Wake up", "Brush teeth", "Eat lunch", "Go to school"], correct: 1 }
-    ]
+  // Fetch questions from the mock API
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch('https://run.mocky.io/v3/bf81e1b3-f31b-40fc-8e68-ef9e61d4d5e4');
+        const data = await response.json();
+        
+        // Filter only toys questions (though all seem to be toys based on the API)
+        const toysQs = data.filter(q => q.category === 'toys');
+        setToysQuestions(toysQs);
+        console.log('Fetched questions:', toysQs);
+      } catch (error) {
+        console.error('Error fetching questions:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchQuestions();
+  }, []);
+
+  // Function to randomize questions
+  const shuffleQuestions = (questions) => {
+    const shuffled = [...questions];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   };
 
   const spinWheel = () => {
@@ -62,49 +64,56 @@ function App() {
     setWheelRotation(finalRotation);
 
     setTimeout(() => {
-      // Simple approach: divide the rotation into 6 equal parts
       // Each segment is 60 degrees
-      const segmentAngle = 360 / categories.length; // 60 degrees
+      const segmentAngle = 60;
       
       // Get the final rotation and normalize it to 0-360
       let normalizedRotation = finalRotation % 360;
       if (normalizedRotation < 0) normalizedRotation += 360;
       
-      // Since our first segment (toys) starts at the top and segments go clockwise,
-      // we need to calculate which segment the pointer hits
-      // The pointer is at the top (0 degrees), so we calculate directly
-      const segmentIndex = Math.floor(normalizedRotation / segmentAngle);
-      
-      // Make sure index is within bounds
-      const selectedIndex = segmentIndex % categories.length;
+      // The wheel rotates clockwise, but we need to calculate counter-clockwise
+      // to match which segment is at the top
+      const reversedRotation = (360 - normalizedRotation) % 360;
+      const selectedIndex = Math.floor(reversedRotation / segmentAngle) % categories.length;
       
       console.log('=== WHEEL DEBUG ===');
       console.log('Final rotation:', finalRotation);
       console.log('Normalized rotation:', normalizedRotation);
+      console.log('Reversed rotation:', reversedRotation);
       console.log('Segment angle:', segmentAngle);
-      console.log('Segment index:', segmentIndex);
       console.log('Selected index:', selectedIndex);
       console.log('Categories:', categories.map((cat, i) => `${i}: ${cat.name}`));
       console.log('Selected category:', categories[selectedIndex].name);
       console.log('===================');
       
-      setSelectedCategory(categories[selectedIndex].name);
+      const selectedCategoryName = categories[selectedIndex].name;
+      setSelectedCategory(selectedCategoryName);
       setIsSpinning(false);
-      setGameState('question');
-      setQuestionIndex(0);
-      setCurrentQuestion(questions[categories[selectedIndex].name][0]);
+      
+      // If toys is selected, go to questions. Otherwise, just show result.
+      if (selectedCategoryName === 'toys' && toysQuestions.length > 0) {
+        // Randomize questions and start the game
+        const shuffled = shuffleQuestions(toysQuestions);
+        setRandomizedQuestions(shuffled);
+        setGameState('question');
+        setQuestionIndex(0);
+        setScore(0);
+        setCurrentQuestion(shuffled[0]);
+      } else {
+        setGameState('result');
+      }
     }, 3000);
   };
 
   const answerQuestion = (selectedAnswer) => {
-    const isCorrect = selectedAnswer === currentQuestion.correct;
+    const isCorrect = selectedAnswer === currentQuestion.correctIndex;
     if (isCorrect) {
       setScore(score + 1);
     }
 
-    if (questionIndex < questions[selectedCategory].length - 1) {
+    if (questionIndex < randomizedQuestions.length - 1) {
       setQuestionIndex(questionIndex + 1);
-      setCurrentQuestion(questions[selectedCategory][questionIndex + 1]);
+      setCurrentQuestion(randomizedQuestions[questionIndex + 1]);
     } else {
       setGameState('result');
     }
@@ -116,17 +125,20 @@ function App() {
     setCurrentQuestion(null);
     setScore(0);
     setQuestionIndex(0);
+    setRandomizedQuestions([]);
   };
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>🎯 EddyQuiz Trivia</h1>
-        <div className="score">Score: {score}</div>
         
         {gameState === 'wheel' && (
           <div className="wheel-container">
             <h2>Click the Wheel to Spin!</h2>
+            {isLoading && (
+              <div className="loading-text">Loading questions...</div>
+            )}
             <div className="wheel-wrapper">
               <svg 
                 className={`wheel ${isSpinning ? 'spinning' : ''}`}
@@ -230,16 +242,30 @@ function App() {
           </div>
         )}
 
-        {gameState === 'question' && currentQuestion && (
+        {gameState === 'question' && (
           <div className="question-container">
-            <h2>Category: {selectedCategory}</h2>
-            <div style={{fontSize: '0.8rem', color: '#ccc', marginBottom: '10px'}}>
-              Debug: Selected = "{selectedCategory}", Questions available for: {Object.keys(questions).join(', ')}
-            </div>
+            <h2>🧸 Toys Questions</h2>
+            <div className="score-display">Score: {score}</div>
             <div className="question-box">
-              <h3>{currentQuestion.question}</h3>
+              {/* Show image if question type is "image" */}
+              {currentQuestion && currentQuestion.type === 'image' && currentQuestion.imageURL && (
+                <div className="question-image">
+                  <img 
+                    src={currentQuestion.imageURL} 
+                    alt="Question image" 
+                    className="question-img"
+                  />
+                </div>
+              )}
+              
+              <h3>{currentQuestion?.question}</h3>
               <div className="options">
-                {currentQuestion.options.map((option, index) => (
+                {currentQuestion && [
+                  currentQuestion.option0,
+                  currentQuestion.option1,
+                  currentQuestion.option2,
+                  currentQuestion.option3
+                ].map((option, index) => (
                   <button
                     key={index}
                     className="option-button"
@@ -251,19 +277,44 @@ function App() {
               </div>
             </div>
             <div className="progress">
-              Question {questionIndex + 1} of {questions[selectedCategory].length}
+              Question {questionIndex + 1} of {randomizedQuestions.length}
             </div>
           </div>
         )}
 
         {gameState === 'result' && (
           <div className="result-container">
-            <h2>🎉 Great Job!</h2>
-            <div className="final-score">
-              You scored {score} out of {questions[selectedCategory].length} in {selectedCategory}!
+            <h2>🎯 Result!</h2>
+            
+            {selectedCategory === 'toys' ? (
+              <div>
+                <div className="category-result">
+                  <div className="selected-category-emoji">🧸</div>
+                  <div className="selected-category-name">TOYS</div>
+                </div>
+                <div className="final-score">
+                  You scored {score} out of {randomizedQuestions.length}!
+                </div>
+              </div>
+            ) : (
+              <div className="category-result">
+                <div className="selected-category-emoji">
+                  {categories.find(cat => cat.name === selectedCategory)?.emoji}
+                </div>
+                <div className="selected-category-name">
+                  {selectedCategory.toUpperCase()}
+                </div>
+                <div className="no-questions">
+                  No questions available for this category yet.
+                </div>
+              </div>
+            )}
+            
+            <div className="debug-info">
+              Debug: Selected category = "{selectedCategory}"
             </div>
             <button className="play-again-button" onClick={resetGame}>
-              Play Again
+              Spin Again
             </button>
           </div>
         )}

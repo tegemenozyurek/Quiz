@@ -45,6 +45,21 @@ h1 {
   gap: 30px;
 }
 
+.loading-text {
+  font-size: 1.2rem;
+  color: #FFEAA7;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  border-radius: 15px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
 .wheel-wrapper {
   position: relative;
   display: flex;
@@ -89,6 +104,16 @@ h1 {
   padding: 30px;
 }
 
+.score-display {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
 .question-box {
   background: rgba(255,255,255,0.1);
   border-radius: 20px;
@@ -96,6 +121,21 @@ h1 {
   margin: 20px 0;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.2);
+}
+
+.question-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.question-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border: 3px solid rgba(255,255,255,0.3);
 }
 
 .question-box h3 {
@@ -139,6 +179,22 @@ h1 {
   display: inline-block;
 }
 
+.final-score {
+  font-size: 1.8rem;
+  margin: 20px 0;
+  background: rgba(255,255,255,0.2);
+  padding: 20px 30px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.no-questions {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 15px;
+  font-style: italic;
+}
+
 /* Result Styles */
 .result-container {
   text-align: center;
@@ -150,12 +206,36 @@ h1 {
   margin-bottom: 30px;
 }
 
-.final-score {
-  font-size: 1.8rem;
-  margin-bottom: 40px;
+.category-result {
   background: rgba(255,255,255,0.2);
-  padding: 20px 30px;
   border-radius: 20px;
+  padding: 40px;
+  margin: 30px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.selected-category-emoji {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.selected-category-name {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.debug-info {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 20px 0;
+  background: rgba(0,0,0,0.3);
+  padding: 10px 20px;
+  border-radius: 10px;
   display: inline-block;
 }
 
@@ -170,6 +250,7 @@ h1 {
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 .play-again-button:hover {
@@ -207,6 +288,11 @@ h1 {
   
   .question-box {
     padding: 20px;
+  }
+  
+  .question-img {
+    width: 150px;
+    height: 150px;
   }
   
   .options {
