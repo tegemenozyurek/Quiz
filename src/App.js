@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './App.css';
 import removeOneOptionImg from './assets/question/remove one option.png';
 import getNewQuestionImg from './assets/question/get a new question.png';
@@ -6,6 +6,15 @@ import playButtonImg from './assets/main-screen/play.png';
 import categoryWheelImg from './assets/wheel-screen/category wheel.png';
 import backButtonImg from './assets/store-screen/back.png';
 import eddyImg from './assets/mascot/eddy.png';
+import helpImg from './assets/selected-category/help.png';
+import settingsImg from './assets/main-screen/settings.png';
+import closeImg from './assets/resume-screen/close.png';
+import playAgainImg from './assets/selected-category/play.png';
+import buttonClickSound from './assets/sounds/buttonClick.mp3';
+import wheelSpinSound from './assets/sounds/wheel.mp3';
+import correctSound from './assets/sounds/correct.mp3';
+import wrongSound from './assets/sounds/wrong.mp3';
+import jokerSound from './assets/sounds/joker.mp3';
 import Confetti from 'react-confetti';
 
 function App() {
@@ -27,11 +36,18 @@ function App() {
   const [getNewQuestionUsed, setGetNewQuestionUsed] = useState(false);
   const [eliminatedOption, setEliminatedOption] = useState(null);
   const [totalScore, setTotalScore] = useState(0);
-  const [roundCount, setRoundCount] = useState(0);
+  const [roundCount, setRoundCount] = useState(1);
   const maxRounds = 3; // You can change this for more/less rounds per game
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showCategoryReveal, setShowCategoryReveal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
+  const [isSoundEnabled, setIsSoundEnabled] = useState(true);
+  const [wheelAudio, setWheelAudio] = useState(null);
+  const [allQuestionsHistory, setAllQuestionsHistory] = useState([]);
+  const [allAnswersHistory, setAllAnswersHistory] = useState([]);
+  const [expandedRounds, setExpandedRounds] = useState({1: false, 2: false, 3: false});
 
   const categories = [
     { name: 'toys', emoji: '🧸', color: '#FF4B4B' },
@@ -41,6 +57,14 @@ function App() {
     { name: 'food', emoji: '🍎', color: '#FF8C42' },
     { name: 'daily routines', emoji: '⏰', color: '#9D4EDD' }
   ];
+
+  const wheelAudioRef = useRef(null);
+  const buttonAudioRef = useRef(null);
+  const correctAudioRef = useRef(null);
+  const wrongAudioRef = useRef(null);
+  const jokerAudioRef = useRef(null);
+  const [isWheelAudioWarmed, setIsWheelAudioWarmed] = useState(false);
+  const [isButtonAudioWarmed, setIsButtonAudioWarmed] = useState(false);
 
   // Fetch questions from the mock API
   useEffect(() => {
@@ -73,8 +97,102 @@ function App() {
     return shuffled;
   };
 
+  // Preload all audio once
+  useEffect(() => {
+    wheelAudioRef.current = new window.Audio(wheelSpinSound);
+    wheelAudioRef.current.volume = 0.3;
+    wheelAudioRef.current.loop = false;
+
+    buttonAudioRef.current = new window.Audio(buttonClickSound);
+    buttonAudioRef.current.volume = 0.3;
+
+    correctAudioRef.current = new window.Audio(correctSound);
+    correctAudioRef.current.volume = 0.3;
+
+    wrongAudioRef.current = new window.Audio(wrongSound);
+    wrongAudioRef.current.volume = 0.3;
+
+    jokerAudioRef.current = new window.Audio(jokerSound);
+    jokerAudioRef.current.volume = 0.3;
+  }, []);
+
+  // Warm up audio on first user interaction
+  useEffect(() => {
+    const warmUpAudio = () => {
+      // Warm up wheel audio
+      if (!isWheelAudioWarmed && wheelAudioRef.current) {
+        wheelAudioRef.current.play().then(() => {
+          wheelAudioRef.current.pause();
+          wheelAudioRef.current.currentTime = 0;
+          setIsWheelAudioWarmed(true);
+        }).catch(() => {});
+      }
+      
+      // Warm up button audio
+      if (!isButtonAudioWarmed && buttonAudioRef.current) {
+        buttonAudioRef.current.play().then(() => {
+          buttonAudioRef.current.pause();
+          buttonAudioRef.current.currentTime = 0;
+          setIsButtonAudioWarmed(true);
+        }).catch(() => {});
+      }
+    };
+    
+    window.addEventListener('pointerdown', warmUpAudio, { once: true });
+    return () => window.removeEventListener('pointerdown', warmUpAudio);
+  }, [isWheelAudioWarmed, isButtonAudioWarmed]);
+
+  const playWheelSound = useCallback(() => {
+    if (isSoundEnabled && wheelAudioRef.current) {
+      wheelAudioRef.current.pause();
+      wheelAudioRef.current.currentTime = 0;
+      wheelAudioRef.current.play();
+    }
+  }, [isSoundEnabled]);
+
+  const stopWheelSound = useCallback(() => {
+    if (wheelAudioRef.current) {
+      wheelAudioRef.current.pause();
+      wheelAudioRef.current.currentTime = 0;
+    }
+  }, []);
+
+  const playButtonSound = useCallback(() => {
+    if (isSoundEnabled && buttonAudioRef.current) {
+      buttonAudioRef.current.pause();
+      buttonAudioRef.current.currentTime = 0;
+      buttonAudioRef.current.play();
+    }
+  }, [isSoundEnabled]);
+
+  const playCorrectSound = useCallback(() => {
+    if (isSoundEnabled && correctAudioRef.current) {
+      correctAudioRef.current.pause();
+      correctAudioRef.current.currentTime = 0;
+      correctAudioRef.current.play();
+    }
+  }, [isSoundEnabled]);
+
+  const playWrongSound = useCallback(() => {
+    if (isSoundEnabled && wrongAudioRef.current) {
+      wrongAudioRef.current.pause();
+      wrongAudioRef.current.currentTime = 0;
+      wrongAudioRef.current.play();
+    }
+  }, [isSoundEnabled]);
+
+  const playJokerSound = useCallback(() => {
+    if (isSoundEnabled && jokerAudioRef.current) {
+      jokerAudioRef.current.pause();
+      jokerAudioRef.current.currentTime = 0;
+      jokerAudioRef.current.play();
+    }
+  }, [isSoundEnabled]);
+
+  // Update spinWheel function to include sound
   const spinWheel = () => {
     if (isSpinning) return;
+    playWheelSound();
     setIsSpinning(true);
     const spins = Math.floor(Math.random() * 5) + 5;
     const extraRotation = Math.floor(Math.random() * 360);
@@ -82,6 +200,7 @@ function App() {
     setWheelRotation(finalRotation);
 
     setTimeout(() => {
+      setIsSpinning(false);
       const segmentAngle = 60;
       let normalizedRotation = finalRotation % 360;
       if (normalizedRotation < 0) normalizedRotation += 360;
@@ -89,26 +208,21 @@ function App() {
       const selectedIndex = Math.floor(reversedRotation / segmentAngle) % categories.length;
       const selectedCategoryName = categories[selectedIndex].name;
       setSelectedCategory(selectedCategoryName);
-      setIsSpinning(false);
       setShowCategoryReveal(true);
 
-      // Wait for 2 seconds after showing the category before moving to questions
       setTimeout(() => {
         setShowCategoryReveal(false);
-        // 3 soru seç
-        if (toysQuestions.length > 0) {
-          const filtered = toysQuestions; // Tüm kategoriler için aynı sorular
-          const shuffled = shuffleQuestions(filtered).slice(0, 3);
-          setQuestionsForRound(shuffled);
-          setRandomizedQuestions(shuffled);
-          setGameState('question');
-          setQuestionIndex(0);
-          setScore(0);
-          setCurrentQuestion(shuffled[0]);
-          setRoundCount(prev => prev + 1);
-        } else {
-          setGameState('result');
-        }
+      if (toysQuestions.length > 0) {
+          const filtered = toysQuestions;
+        const shuffled = shuffleQuestions(filtered).slice(0, 3);
+        setQuestionsForRound(shuffled);
+        setRandomizedQuestions(shuffled);
+        setGameState('question');
+        setQuestionIndex(0);
+        setCurrentQuestion(shuffled[0]);
+      } else {
+        setGameState('result');
+      }
       }, 2000);
     }, 3000);
   };
@@ -150,17 +264,22 @@ function App() {
       setQuestionIndex(questionIndex + 1);
       setCurrentQuestion(questionsForRound[questionIndex + 1]);
     } else {
-      // If this was the last round, show game over
-      if (roundCount >= maxRounds) {
-        setTotalScore(prev => prev + (selectedAnswer === currentQuestion.correctIndex ? 1 : 0));
+      // Round is complete
+      const nextRound = roundCount + 1;
+      if (nextRound > maxRounds) {
+        // Game is complete
+        const finalScore = allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].correctIndex).length;
+        setScore(finalScore);
         setGameState('gameover');
       } else {
-        setSelectedAnswers([]);
+        // Move to next round
+        setRoundCount(nextRound);
         setGameState('wheel');
       }
     }
   };
 
+  // Update answerQuestion function to include sound
   const answerQuestion = (index) => {
     if (showFeedback) return;
     setSelectedAnswer(index);
@@ -171,18 +290,22 @@ function App() {
     });
     setShowFeedback(true);
     
-    // Show confetti if answer is correct
-    if (index === currentQuestion.correctIndex) {
+    // Store question in history and update score immediately
+    setAllQuestionsHistory(prev => [...prev, currentQuestion]);
+    setAllAnswersHistory(prev => [...prev, index]);
+    
+      if (index === currentQuestion.correctIndex) {
+      playCorrectSound();
       setShowConfetti(true);
+      setScore(prevScore => prevScore + 1); // Update score immediately
       setTimeout(() => {
         setShowConfetti(false);
-      }, 2000); // Hide confetti after 2 seconds
+      }, 2000);
+    } else {
+      playWrongSound();
     }
     
     setTimeout(() => {
-      if (index === currentQuestion.correctIndex) {
-        setScore(score + 1);
-      }
       goToNextQuestion();
     }, 1500);
   };
@@ -193,6 +316,7 @@ function App() {
     // Find incorrect options
     const incorrectOptions = [0,1,2,3].filter(idx => idx !== currentQuestion.correctIndex && idx !== eliminatedOption);
     if (incorrectOptions.length > 0) {
+      playButtonSound();
       const toEliminate = incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)];
       setEliminatedOption(toEliminate);
       setRemoveOptionUsed(true);
@@ -205,6 +329,7 @@ function App() {
     // Find a new question not already asked in this round
     const remaining = toysQuestions.filter(q => !questionsForRound.includes(q) && q !== currentQuestion);
     if (remaining.length > 0) {
+      playButtonSound();
       const newQ = remaining[Math.floor(Math.random() * remaining.length)];
       const newQuestions = [...questionsForRound];
       newQuestions[questionIndex] = newQ;
@@ -241,8 +366,10 @@ function App() {
     setShowFeedback(false);
     setSelectedAnswer(null);
     setSelectedAnswers([]);
-    setTotalScore(0);
-    setRoundCount(0);
+    setRoundCount(1);
+    setAllQuestionsHistory([]);
+    setAllAnswersHistory([]);
+    setExpandedRounds({1: false, 2: false, 3: false});
   };
 
   return (
@@ -290,6 +417,12 @@ function App() {
               Eddy Trivia
             </div>
             
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '20px'
+            }}>
             <img 
               src={playButtonImg} 
               alt="Play" 
@@ -301,8 +434,352 @@ function App() {
                   transform: 'scale(1.1)'
                 }
               }} 
-              onClick={()=>setGameState('wheel')} 
-            />
+                onClick={() => {
+                  playButtonSound();
+                  setGameState('wheel');
+                }}
+              />
+              
+              <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: '35px',
+                marginTop: '10px'
+              }}>
+                <img 
+                  src={helpImg} 
+                  alt="Help" 
+                  style={{
+                    width: '72px',
+                    height: '70px',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease'
+                  }}
+                  onClick={() => {
+                    playButtonSound();
+                    setShowHelpModal(true);
+                  }}
+                />
+                <img 
+                  src={settingsImg} 
+                  alt="Settings" 
+                  style={{
+                    width: '85px',
+                    height: '70px',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease'
+                  }}
+                  onClick={() => {
+                    playButtonSound();
+                    setShowSettingsModal(true);
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Help Modal */}
+            {showHelpModal && (
+              <div style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'rgba(0,0,0,0.85)',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: 1000,
+                padding: '20px'
+              }}>
+                <div style={{
+                  background: 'linear-gradient(145deg, #7B4AE2, #6039c8)',
+                  borderRadius: '28px',
+                  padding: '35px 25px',
+                  position: 'relative',
+                  width: '100%',
+                  maxWidth: '480px',
+                  maxHeight: '85vh',
+                  overflowY: 'auto',
+                  color: '#fff',
+                  fontFamily: 'Poppins, sans-serif',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}>
+                  <img 
+                    src={closeImg} 
+                    alt="Close" 
+                    style={{
+                      position: 'absolute',
+                      top: '25px',
+                      right: '25px',
+                      width: '28px',
+                      height: '28px',
+                      cursor: 'pointer',
+                      transition: 'transform 0.2s ease, opacity 0.2s ease',
+                      filter: 'brightness(0) invert(1)',
+                      opacity: 0.9,
+                      ':hover': {
+                        transform: 'scale(1.1)',
+                        opacity: 1
+                      }
+                    }}
+                    onClick={() => {
+                      playButtonSound();
+                      setShowHelpModal(false);
+                    }}
+                  />
+                  <h2 style={{
+                    color: '#fff',
+                    fontSize: 'clamp(24px, 5vw, 28px)',
+                    marginBottom: '30px',
+                    textAlign: 'center',
+                    fontWeight: '800',
+                    letterSpacing: '1px',
+                    textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                  }}>How to Play</h2>
+                  <div style={{
+                    fontSize: 'clamp(14px, 3vw, 16px)',
+                    lineHeight: '1.8',
+                    color: '#fff',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px'
+                  }}>
+                    <div style={{
+                      background: 'rgba(255,255,255,0.1)',
+                      borderRadius: '20px',
+                      padding: '25px',
+                      border: '1px solid rgba(255,255,255,0.05)'
+                    }}>
+                      <p style={{
+                        fontSize: 'clamp(16px, 3.5vw, 18px)',
+                        fontWeight: '600',
+                        marginBottom: '15px',
+                        color: '#4ECDC4'
+                      }}>
+                        Game Structure
+                      </p>
+                      <div style={{display: 'flex', flexDirection: 'column', gap: '12px'}}>
+                        <p>• The game consists of 3 rounds</p>
+                        <p>• Each round has 3 questions</p>
+                        <p>• You have 25 seconds to answer each question</p>
+                      </div>
+                    </div>
+                    
+                    <div style={{
+                      background: 'rgba(255,255,255,0.1)',
+                      borderRadius: '20px',
+                      padding: '25px',
+                      border: '1px solid rgba(255,255,255,0.05)'
+                    }}>
+                      <p style={{
+                        fontSize: 'clamp(16px, 3.5vw, 18px)',
+                        fontWeight: '600',
+                        marginBottom: '15px',
+                        color: '#4ECDC4'
+                      }}>
+                        Power-ups
+                      </p>
+                      <div style={{display: 'flex', flexDirection: 'column', gap: '15px'}}>
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '15px',
+                          background: 'rgba(0,0,0,0.15)',
+                          padding: '15px',
+                          borderRadius: '16px',
+                          border: '1px solid rgba(255,255,255,0.05)'
+                        }}>
+                          <div style={{
+                            background: 'rgba(255,255,255,0.1)',
+                            borderRadius: '12px',
+                            padding: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <img 
+                              src={removeOneOptionImg} 
+                              alt="Remove Option" 
+                              style={{width: '35px', height: '35px'}}
+                            />
+                          </div>
+                          <span>Remove one wrong option</span>
+                        </div>
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '15px',
+                          background: 'rgba(0,0,0,0.15)',
+                          padding: '15px',
+                          borderRadius: '16px',
+                          border: '1px solid rgba(255,255,255,0.05)'
+                        }}>
+                          <div style={{
+                            background: 'rgba(255,255,255,0.1)',
+                            borderRadius: '12px',
+                            padding: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <img 
+                              src={getNewQuestionImg} 
+                              alt="New Question" 
+                              style={{width: '35px', height: '35px'}}
+                            />
+                          </div>
+                          <span>Get a new question</span>
+                        </div>
+                        <p style={{
+                          fontSize: '14px',
+                          opacity: 0.9,
+                          fontStyle: 'italic',
+                          textAlign: 'center',
+                          marginTop: '5px'
+                        }}>
+                          You can use each power-up once per round. Choose wisely!
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div style={{
+                      background: 'rgba(78,205,196,0.15)',
+                      padding: '20px',
+                      borderRadius: '20px',
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      border: '1px solid rgba(78,205,196,0.2)',
+                      marginTop: '10px'
+                    }}>
+                      <p style={{marginBottom: '8px'}}>Score 1 point for each correct answer!</p>
+                      <p style={{
+                        fontSize: 'clamp(16px, 3.5vw, 18px)',
+                        color: '#4ECDC4'
+                      }}>
+                        Try to achieve the highest score! 🎯
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Settings Modal */}
+            {showSettingsModal && (
+              <div style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'rgba(0,0,0,0.85)',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: 1000,
+                padding: '20px'
+              }}>
+                <div style={{
+                  background: 'linear-gradient(145deg, #7B4AE2, #6039c8)',
+                  borderRadius: '28px',
+                  padding: '35px 25px',
+                  position: 'relative',
+                  width: '100%',
+                  maxWidth: '480px',
+                  maxHeight: '85vh',
+                  overflowY: 'auto',
+                  color: '#fff',
+                  fontFamily: 'Poppins, sans-serif',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}>
+                  <img 
+                    src={closeImg} 
+                    alt="Close" 
+                    style={{
+                      position: 'absolute',
+                      top: '25px',
+                      right: '25px',
+                      width: '28px',
+                      height: '28px',
+                      cursor: 'pointer',
+                      transition: 'transform 0.2s ease, opacity 0.2s ease',
+                      filter: 'brightness(0) invert(1)',
+                      opacity: 0.9,
+                      ':hover': {
+                        transform: 'scale(1.1)',
+                        opacity: 1
+                      }
+                    }}
+                    onClick={() => {
+                      playButtonSound();
+                      setShowSettingsModal(false);
+                    }}
+                  />
+                  <h2 style={{
+                    color: '#fff',
+                    fontSize: 'clamp(24px, 5vw, 28px)',
+                    marginBottom: '30px',
+                    textAlign: 'center',
+                    fontWeight: '800',
+                    letterSpacing: '1px',
+                    textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                  }}>Settings</h2>
+                  
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px'
+                  }}>
+                    {/* Sound Effects Toggle */}
+                    <div style={{
+                      background: 'rgba(255,255,255,0.1)',
+                      borderRadius: '20px',
+                      padding: '20px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      border: '1px solid rgba(255,255,255,0.05)'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '15px'
+                      }}>
+                        <span style={{fontSize: '24px'}}>🔊</span>
+                        <span style={{fontSize: 'clamp(16px, 3.5vw, 18px)'}}>Sound Effects</span>
+                      </div>
+                      <div 
+                        onClick={() => setIsSoundEnabled(!isSoundEnabled)}
+                        style={{
+                          width: '60px',
+                          height: '32px',
+                          background: isSoundEnabled ? '#4ECDC4' : 'rgba(255,255,255,0.2)',
+                          borderRadius: '16px',
+                          position: 'relative',
+                          cursor: 'pointer',
+                          transition: 'background-color 0.3s ease'
+                        }}
+                      >
+                        <div style={{
+                          width: '26px',
+                          height: '26px',
+                          background: '#fff',
+                          borderRadius: '13px',
+                          position: 'absolute',
+                          top: '3px',
+                          left: isSoundEnabled ? '31px' : '3px',
+                          transition: 'left 0.3s ease',
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                        }} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
         {gameState === 'wheel' && (
@@ -421,37 +898,14 @@ function App() {
             
             {/* Category Reveal Animation */}
             {showCategoryReveal && (
-              <div style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'rgba(0,0,0,0.85)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 1000,
-                animation: 'fadeIn 0.3s ease-out'
-              }}>
-                <div style={{
-                  fontSize: '120px',
-                  marginBottom: '20px',
-                  animation: 'scaleIn 0.5s ease-out'
-                }}>
-                  {categories.find(cat => cat.name === selectedCategory)?.emoji}
-                </div>
-                <div style={{
-                  fontSize: '40px',
-                  fontWeight: 'bold',
-                  color: '#fff',
-                  textTransform: 'uppercase',
-                  letterSpacing: '3px',
-                  animation: 'slideUp 0.5s ease-out',
-                  textAlign: 'center'
-                }}>
-                  {selectedCategory}
+              <div className="category-reveal-container">
+                <div className="category-reveal-content">
+                  <div className="category-emoji">
+                    {categories.find(cat => cat.name === selectedCategory)?.emoji}
+                  </div>
+                  <div className="category-name">
+                    {selectedCategory}
+                  </div>
                 </div>
               </div>
             )}
@@ -525,9 +979,9 @@ function App() {
                   whiteSpace: 'nowrap',
                   minWidth: 0
                 }}>
-                  <span style={{color:'#4ECDC4'}}>✓</span>{questionsForRound.slice(0, questionIndex).filter((q, i) => selectedAnswers[i] === q.correctIndex).length}
+                  <span style={{color:'#4ECDC4'}}>✓</span>{allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].correctIndex).length}
                   <span style={{margin:'0 2px'}}>|</span>
-                  <span style={{color:'#ff4444'}}>✗</span>{questionsForRound.slice(0, questionIndex).filter((q, i) => selectedAnswers[i] !== undefined && selectedAnswers[i] !== q.correctIndex).length}
+                  <span style={{color:'#ff4444'}}>✗</span>{allAnswersHistory.filter((ans, i) => ans !== allQuestionsHistory[i].correctIndex).length}
                 </div>
               </div>
             </div>
@@ -682,11 +1136,45 @@ function App() {
                 padding: '18px 0 24px 0',
                 zIndex: 200
               }}>
-                <button className="question-action-btn" onClick={handleRemoveOneOption} disabled={removeOptionUsed || showFeedback} style={{background:'none',border:'none',padding:0,cursor:'pointer'}}>
-                  <img src={removeOneOptionImg} alt="remove one option" style={{width:60,height:60}} />
+                <button 
+                  className="question-action-btn" 
+                  onClick={handleRemoveOneOption} 
+                  disabled={removeOptionUsed || showFeedback} 
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer'
+                  }}
+                >
+                  <img 
+                    src={removeOneOptionImg} 
+                    alt="remove one option" 
+                    style={{
+                      width: '75px',
+                      height: '75px'
+                    }} 
+                  />
                 </button>
-                <button className="question-action-btn" onClick={handleGetNewQuestion} disabled={getNewQuestionUsed || showFeedback} style={{background:'none',border:'none',padding:0,cursor:'pointer'}}>
-                  <img src={getNewQuestionImg} alt="get a new question" style={{width:60,height:60}} />
+                <button 
+                  className="question-action-btn" 
+                  onClick={handleGetNewQuestion} 
+                  disabled={getNewQuestionUsed || showFeedback} 
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer'
+                  }}
+                >
+                  <img 
+                    src={getNewQuestionImg} 
+                    alt="get a new question" 
+                    style={{
+                      width: '75px',
+                      height: '75px'
+                    }} 
+                  />
                 </button>
               </div>
             </div>
@@ -732,13 +1220,276 @@ function App() {
 
         {/* Game Over Screen */}
         {gameState === 'gameover' && (
-          <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',height:'70vh'}}>
-            <div style={{fontSize:60,marginBottom:20}}>🏆</div>
-            <div style={{fontSize:36,fontWeight:900,letterSpacing:2,marginBottom:10}}>OYUN BİTTİ!</div>
-            <div style={{fontSize:24,marginBottom:30,color:'#fff',background:'rgba(0,0,0,0.2)',padding:'16px 40px',borderRadius:20}}>
-              Toplam Skor: <span style={{fontWeight:900}}>{totalScore}</span>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            minHeight: '100vh',
+            padding: '30px 20px',
+            background: '#7B4AE2'
+          }}>
+            <div style={{
+              fontSize: 36,
+              fontWeight: 900,
+              letterSpacing: 2,
+              marginBottom: 30,
+              color: '#fff'
+            }}>GAME OVER!</div>
+
+            {/* Improved score display */}
+            <div style={{
+              width: '100%',
+              maxWidth: '400px',
+              background: 'rgba(255,255,255,0.1)',
+              borderRadius: '24px',
+              padding: '25px',
+              marginBottom: '30px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '20px'
+            }}>
+              <div style={{
+                fontSize: '28px',
+                color: '#fff',
+                textAlign: 'center',
+                fontWeight: '600'
+              }}>
+                Final Score: <span style={{color: '#4ECDC4', fontWeight: '800'}}>{score}</span>
             </div>
-            <button style={{background:'linear-gradient(45deg,#7B4AE2,#4ECDC4)',color:'#fff',fontWeight:900,fontSize:28,padding:'18px 60px',border:'none',borderRadius:40,boxShadow:'0 8px 24px #0003',cursor:'pointer',marginTop:20,letterSpacing:2}} onClick={resetGame}>TEKRAR OYNA</button>
+
+              <div style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '20px'
+              }}>
+                <div style={{
+                  flex: 1,
+                  maxWidth: '160px',
+                  background: 'rgba(78,205,196,0.15)',
+                  borderRadius: '16px',
+                  padding: '15px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '5px',
+                  border: '1px solid rgba(78,205,196,0.3)'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: 'rgba(78,205,196,0.2)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '24px'
+                  }}>✓</div>
+                  <div style={{
+                    color: '#4ECDC4',
+                    fontSize: '24px',
+                    fontWeight: '800'
+                  }}>
+                    {allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].correctIndex).length}
+                  </div>
+                  <div style={{
+                    color: '#fff',
+                    fontSize: '14px',
+                    opacity: 0.8
+                  }}>Correct</div>
+                </div>
+
+                <div style={{
+                  flex: 1,
+                  maxWidth: '160px',
+                  background: 'rgba(255,75,75,0.15)',
+                  borderRadius: '16px',
+                  padding: '15px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '5px',
+                  border: '1px solid rgba(255,75,75,0.3)'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: 'rgba(255,75,75,0.2)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '24px'
+                  }}>✗</div>
+                  <div style={{
+                    color: '#ff4444',
+                    fontSize: '24px',
+                    fontWeight: '800'
+                  }}>
+                    {allAnswersHistory.filter((ans, i) => ans !== allQuestionsHistory[i].correctIndex).length}
+                  </div>
+                  <div style={{
+                    color: '#fff',
+                    fontSize: '14px',
+                    opacity: 0.8
+                  }}>Wrong</div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{
+              width: '100%',
+              maxWidth: '600px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '15px',
+              marginBottom: '30px'
+            }}>
+              {[1, 2, 3].map(round => {
+                const startIndex = (round - 1) * 3;
+                const endIndex = startIndex + 3; // Always show 3 slots per round
+                const roundQuestions = allQuestionsHistory.slice(startIndex, endIndex);
+                const roundAnswers = allAnswersHistory.slice(startIndex, endIndex);
+                
+                // Show the round even if there are no questions
+                const correctCount = roundAnswers.filter((ans, i) => ans === roundQuestions[i]?.correctIndex).length;
+                const wrongCount = roundAnswers.length - correctCount;
+
+                return (
+                  <div key={round} style={{
+                    background: 'rgba(255,255,255,0.1)',
+                    borderRadius: '24px',
+                    overflow: 'hidden'
+                  }}>
+                    <div 
+                      onClick={() => setExpandedRounds(prev => ({...prev, [round]: !prev[round]}))}
+                      style={{
+                        padding: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        cursor: 'pointer',
+                        background: 'rgba(255,255,255,0.05)',
+                        borderBottom: expandedRounds[round] && roundQuestions.length > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none'
+                      }}
+                    >
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '15px'
+                      }}>
+                        <span style={{
+                          fontSize: '24px',
+                          fontWeight: '800',
+                          color: '#fff'
+                        }}>Round {round}</span>
+                        <div style={{
+                          display: 'flex',
+                          gap: '10px',
+                          fontSize: '16px'
+                        }}>
+                          {roundQuestions.length > 0 ? (
+                            <>
+                              <span style={{color: '#4ECDC4'}}>✓ {correctCount}</span>
+                              <span style={{color: '#ff4444'}}>✗ {wrongCount}</span>
+                            </>
+                          ) : (
+                            <span style={{opacity: 0.7}}>Not played</span>
+                          )}
+                        </div>
+                      </div>
+                      {roundQuestions.length > 0 && (
+                        <span style={{
+                          fontSize: '24px',
+                          color: '#fff',
+                          transform: expandedRounds[round] ? 'rotate(180deg)' : 'rotate(0deg)',
+                          transition: 'transform 0.3s ease'
+                        }}>▼</span>
+                      )}
+                    </div>
+                    
+                    {expandedRounds[round] && roundQuestions.length > 0 && (
+                      <div style={{
+                        padding: '20px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '15px'
+                      }}>
+                        {roundQuestions.map((question, index) => {
+                          const absoluteIndex = startIndex + index;
+                          const answer = roundAnswers[index];
+                          
+                          return (
+                            <div key={index} style={{
+                              background: answer === question.correctIndex ? 
+                                'rgba(78,205,196,0.2)' : 'rgba(255,75,75,0.2)',
+                              padding: '15px',
+                              borderRadius: '12px',
+                              color: '#fff'
+                            }}>
+                              <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                marginBottom: '8px'
+                              }}>
+                                <span style={{
+                                  fontSize: '18px',
+                                  opacity: 0.9
+                                }}>
+                                  {answer === question.correctIndex ? '✓' : '✗'}
+                                </span>
+                                <span style={{flex: 1}}>{question.question}</span>
+                              </div>
+                              <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: '1fr 1fr',
+                                gap: '8px',
+                                fontSize: '14px',
+                                opacity: 0.9
+                              }}>
+                                {[question.option0, question.option1, question.option2, question.option3].map((option, optIndex) => (
+                                  <div key={optIndex} style={{
+                                    padding: '8px',
+                                    background: answer === optIndex ? 
+                                      (question.correctIndex === optIndex ? 'rgba(78,205,196,0.3)' : 'rgba(255,75,75,0.3)') :
+                                      (question.correctIndex === optIndex ? 'rgba(78,205,196,0.3)' : 'rgba(255,255,255,0.1)'),
+                                    borderRadius: '8px'
+                                  }}>
+                                    {option}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Game over play again button */}
+            <img 
+              src={playAgainImg} 
+              alt="Play Again" 
+              style={{
+                width: '160px',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease',
+                marginTop: '20px',
+                ':hover': {
+                  transform: 'scale(1.1)'
+                }
+              }}
+              onClick={() => {
+                playButtonSound();
+                resetGame();
+              }}
+            />
           </div>
         )}
       </header>
