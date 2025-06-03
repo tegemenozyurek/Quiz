@@ -5,6 +5,8 @@ import getNewQuestionImg from './assets/question/get a new question.png';
 import playButtonImg from './assets/main-screen/play.png';
 import categoryWheelImg from './assets/wheel-screen/category wheel.png';
 import backButtonImg from './assets/store-screen/back.png';
+import eddyImg from './assets/mascot/eddy.png';
+import Confetti from 'react-confetti';
 
 function App() {
   const [gameState, setGameState] = useState('start'); // start, wheel, question, result
@@ -28,6 +30,8 @@ function App() {
   const [roundCount, setRoundCount] = useState(0);
   const maxRounds = 3; // You can change this for more/less rounds per game
   const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [showCategoryReveal, setShowCategoryReveal] = useState(false);
 
   const categories = [
     { name: 'toys', emoji: '🧸', color: '#FF4B4B' },
@@ -86,20 +90,26 @@ function App() {
       const selectedCategoryName = categories[selectedIndex].name;
       setSelectedCategory(selectedCategoryName);
       setIsSpinning(false);
-      // 3 soru seç
-      if (toysQuestions.length > 0) {
-        const filtered = toysQuestions; // Tüm kategoriler için aynı sorular
-        const shuffled = shuffleQuestions(filtered).slice(0, 3);
-        setQuestionsForRound(shuffled);
-        setRandomizedQuestions(shuffled);
-        setGameState('question');
-        setQuestionIndex(0);
-        setScore(0);
-        setCurrentQuestion(shuffled[0]);
-        setRoundCount(prev => prev + 1);
-      } else {
-        setGameState('result');
-      }
+      setShowCategoryReveal(true);
+
+      // Wait for 2 seconds after showing the category before moving to questions
+      setTimeout(() => {
+        setShowCategoryReveal(false);
+        // 3 soru seç
+        if (toysQuestions.length > 0) {
+          const filtered = toysQuestions; // Tüm kategoriler için aynı sorular
+          const shuffled = shuffleQuestions(filtered).slice(0, 3);
+          setQuestionsForRound(shuffled);
+          setRandomizedQuestions(shuffled);
+          setGameState('question');
+          setQuestionIndex(0);
+          setScore(0);
+          setCurrentQuestion(shuffled[0]);
+          setRoundCount(prev => prev + 1);
+        } else {
+          setGameState('result');
+        }
+      }, 2000);
     }, 3000);
   };
 
@@ -160,6 +170,15 @@ function App() {
       return arr;
     });
     setShowFeedback(true);
+    
+    // Show confetti if answer is correct
+    if (index === currentQuestion.correctIndex) {
+      setShowConfetti(true);
+      setTimeout(() => {
+        setShowConfetti(false);
+      }, 2000); // Hide confetti after 2 seconds
+    }
+    
     setTimeout(() => {
       if (index === currentQuestion.correctIndex) {
         setScore(score + 1);
@@ -228,6 +247,17 @@ function App() {
 
   return (
     <div className="App">
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          numberOfPieces={200}
+          recycle={false}
+          gravity={0.3}
+          initialVelocityY={10}
+          style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}
+        />
+      )}
       <header className="App-header">
         {/* <h1>🎯 EddyQuiz Trivia</h1> */}
         {gameState === 'start' && (
@@ -241,6 +271,14 @@ function App() {
             padding: '20px',
             gap: '40px'
           }}>
+            <img 
+              src={eddyImg} 
+              alt="Eddy the Penguin" 
+              style={{
+                width: '200px',
+                marginBottom: '20px'
+              }}
+            />
             <div style={{
               fontSize: '56px',
               fontWeight: 800,
@@ -280,7 +318,7 @@ function App() {
             {isLoading && (
               <div className="loading-text">Loading questions...</div>
             )}
-            <div className="wheel-wrapper" style={{display:'flex',justifyContent:'center',alignItems:'center',height:'400px',width:'100%'}}>
+            <div className="wheel-wrapper" style={{display:'flex',justifyContent:'center',alignItems:'center',height:'400px',width:'100%',position:'relative'}}>
               <svg 
                 className={`wheel ${isSpinning ? 'spinning' : ''}`}
                 style={{ transform: `rotate(${wheelRotation}deg)`, width: 380, height: 380, display: 'block', margin: '0 auto' }}
@@ -380,6 +418,43 @@ function App() {
               </svg>
               <div className="wheel-pointer" style={{position:'absolute',top:'-30px',left:'50%',transform:'translateX(-50%)',fontSize:'2.5rem'}}>▼</div>
             </div>
+            
+            {/* Category Reveal Animation */}
+            {showCategoryReveal && (
+              <div style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'rgba(0,0,0,0.85)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 1000,
+                animation: 'fadeIn 0.3s ease-out'
+              }}>
+                <div style={{
+                  fontSize: '120px',
+                  marginBottom: '20px',
+                  animation: 'scaleIn 0.5s ease-out'
+                }}>
+                  {categories.find(cat => cat.name === selectedCategory)?.emoji}
+                </div>
+                <div style={{
+                  fontSize: '40px',
+                  fontWeight: 'bold',
+                  color: '#fff',
+                  textTransform: 'uppercase',
+                  letterSpacing: '3px',
+                  animation: 'slideUp 0.5s ease-out',
+                  textAlign: 'center'
+                }}>
+                  {selectedCategory}
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -423,7 +498,7 @@ function App() {
                 textOverflow: 'ellipsis',
                 margin: '0 12px'
               }}>
-                Round {roundCount}  •  Question {questionIndex + 1}
+                R:{roundCount} Question {questionIndex + 1}
               </span>
               <div style={{
                 display: 'flex',
