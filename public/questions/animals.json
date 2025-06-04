@@ -1,0 +1,736 @@
+{
+  "category": "ANIMALS",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which animal says \"meow\"?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Cow",
+        "Bird"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 2,
+      "question": "Look at the picture. What animal is this?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Rabbit",
+        "Horse"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/kitten_1308-33384.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 3,
+      "question": "Which animal can fly?",
+      "options": [
+        "Elephant",
+        "Fish",
+        "Bird",
+        "Dog"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 4,
+      "question": "What animal lives in the ocean and has fins?",
+      "options": [
+        "Dog",
+        "Fish",
+        "Cat",
+        "Cow"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 5,
+      "question": "Look at the picture. What animal is it?",
+      "options": [
+        "Whale",
+        "Horse",
+        "Cat",
+        "Dog"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-vector/sticker-template-dog-cartoon-character_1308-67128.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 6,
+      "question": "Which animal is known as \"man's best friend\"?",
+      "options": [
+        "Cat",
+        "Dog",
+        "Bird",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 7,
+      "question": "What animal has a long trunk?",
+      "options": [
+        "Lion",
+        "Elephant",
+        "Rabbit",
+        "Horse"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 8,
+      "question": "Look at the picture. What animal is this?",
+      "options": [
+        "Elephant",
+        "Dog",
+        "Cat",
+        "Horse"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/adult-elephant-without-ivory-cartoon-style-white-background_1308-53208.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 9,
+      "question": "Which animal says \"moo\"?",
+      "options": [
+        "Cat",
+        "Dog",
+        "Cow",
+        "Bird"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 10,
+      "question": "What animal has stripes?",
+      "options": [
+        "Tiger",
+        "Elephant",
+        "Rabbit",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 11,
+      "question": "Look at the picture. What animal is it?",
+      "options": [
+        "Lion",
+        "Tiger",
+        "Elephant",
+        "Dog"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-photo/3d-animated-cartoon-lion_23-2150800715.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 12,
+      "question": "Which animal hops and has big ears?",
+      "options": [
+        "Cat",
+        "Rabbit",
+        "Dog",
+        "Horse"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 13,
+      "question": "What animal says \"neigh\"?",
+      "options": [
+        "Horse",
+        "Dog",
+        "Cat",
+        "Cow"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 14,
+      "question": "Look at the picture. What animal is this?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Fish",
+        "Horse"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-photo/horse-running-through-old-western-landscape_23-2150527864.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 15,
+      "question": "Which animal is big and gray with tusks?",
+      "options": [
+        "Elephant",
+        "Rhino",
+        "Dog",
+        "Cat"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 16,
+      "question": "What animal lives in a hive and makes honey?",
+      "options": [
+        "Butterfly",
+        "Bee",
+        "Ant",
+        "Bird"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 17,
+      "question": "Look at the picture. What insect is this?",
+      "options": [
+        "Butterfly",
+        "Bee",
+        "Ant",
+        "Fly"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/cute-bee-with-honey-dripping_1308-175859.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 18,
+      "question": "Which animal has a shell?",
+      "options": [
+        "Fish",
+        "Turtle",
+        "Dog",
+        "Cat"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 19,
+      "question": "What animal is known for saying \"ribbit\"?",
+      "options": [
+        "Frog",
+        "Dog",
+        "Bird",
+        "Cat"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 20,
+      "question": "Look at the picture. What animal is it?",
+      "options": [
+        "Rabbit",
+        "Frog",
+        "Cat",
+        "Dog"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/set-rabbit-silhouettes-bunny-vector_883220-46.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 21,
+      "question": "Which animal has a long neck?",
+      "options": [
+        "Elephant",
+        "Giraffe",
+        "Monkey",
+        "Cat"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 22,
+      "question": "Which animal barks?",
+      "options": [
+        "Cow",
+        "Bird",
+        "Dog",
+        "Sheep"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 23,
+      "question": "Which animal has feathers?",
+      "options": [
+        "Dog",
+        "Fish",
+        "Bird",
+        "Cat"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 24,
+      "question": "What animal can swing from trees?",
+      "options": [
+        "Monkey",
+        "Tiger",
+        "Cow",
+        "Rabbit"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 25,
+      "question": "Which animal lives in water and has eight arms?",
+      "options": [
+        "Whale",
+        "Octopus",
+        "Crab",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 26,
+      "question": "What animal gives us wool?",
+      "options": [
+        "Cow",
+        "Dog",
+        "Sheep",
+        "Cat"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 27,
+      "question": "Which animal has black and white stripes?",
+      "options": [
+        "Giraffe",
+        "Horse",
+        "Zebra",
+        "Lion"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-vector/zebra-cartoon-illustration-vector-design-clipart-kids_1058532-14833.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 28,
+      "question": "Which animal can climb trees and loves bananas?",
+      "options": [
+        "Cat",
+        "Monkey",
+        "Dog",
+        "Lion"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 29,
+      "question": "What animal is big, furry, and can be brown or white?",
+      "options": [
+        "Dog",
+        "Bear",
+        "Rabbit",
+        "Cow"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 30,
+      "question": "Which animal lives in the desert and has a hump?",
+      "options": [
+        "Camel",
+        "Elephant",
+        "Giraffe",
+        "Kangaroo"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 31,
+      "question": "What animal can hop and carries babies in a pouch?",
+      "options": [
+        "Cat",
+        "Rabbit",
+        "Kangaroo",
+        "Dog"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-photo/free-kangaroo-wild_23-2151639048.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 32,
+      "question": "Which animal swims and quacks?",
+      "options": [
+        "Dog",
+        "Duck",
+        "Bird",
+        "Cat"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 33,
+      "question": "What small animal likes cheese and squeaks?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Mouse",
+        "Cow"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 34,
+      "question": "What sea animal has a sharp fin and many teeth?",
+      "options": [
+        "Whale",
+        "Octopus",
+        "Shark",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 35,
+      "question": "Which animal has wings but can't fly?",
+      "options": [
+        "Duck",
+        "Penguin",
+        "Parrot",
+        "Eagle"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 36,
+      "question": "What animal guards the house?",
+      "options": [
+        "Rabbit",
+        "Dog",
+        "Cat",
+        "Cow"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 37,
+      "question": "Which animal has big ears and lives in the forest?",
+      "options": [
+        "Elephant",
+        "Dog",
+        "Cat",
+        "Tiger"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 38,
+      "question": "Which animal is pink and lives on a farm?",
+      "options": [
+        "Dog",
+        "Pig",
+        "Cat",
+        "Cow"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 39,
+      "question": "What bird is known for repeating words?",
+      "options": [
+        "Sparrow",
+        "Parrot",
+        "Eagle",
+        "Duck"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 40,
+      "question": "What farm animal gives us milk?",
+      "options": [
+        "Cow",
+        "Dog",
+        "Chicken",
+        "Pig"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/cute-cow-with-big-smile-white_1308-41190.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 41,
+      "question": "Which animal is small and green and jumps?",
+      "options": [
+        "Lizard",
+        "Snake",
+        "Frog",
+        "Dog"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 42,
+      "question": "What animal is known as the king of the jungle?",
+      "options": [
+        "Tiger",
+        "Lion",
+        "Elephant",
+        "Bear"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 43,
+      "question": "What insect has colorful wings and flies?",
+      "options": [
+        "Fly",
+        "Bee",
+        "Butterfly",
+        "Ant"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 44,
+      "question": "What animal is slow and carries its home?",
+      "options": [
+        "Turtle",
+        "Dog",
+        "Cat",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 45,
+      "question": "Which animal has two humps?",
+      "options": [
+        "Camel",
+        "Zebra",
+        "Giraffe",
+        "Horse"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 46,
+      "question": "What animal has a pouch and strong legs?",
+      "options": [
+        "Kangaroo",
+        "Rabbit",
+        "Cat",
+        "Dog"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 47,
+      "question": "Which animal lives under the ground and digs tunnels?",
+      "options": [
+        "Cat",
+        "Mole",
+        "Dog",
+        "Horse"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 48,
+      "question": "What animal is this?",
+      "options": [
+        "Cat",
+        "Owl",
+        "Wolf",
+        "Fox"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 49,
+      "question": "What animal can change its color to hide?",
+      "options": [
+        "Snake",
+        "Frog",
+        "Chameleon",
+        "Lizard"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 50,
+      "question": "What animal lives in ice and eats fish?",
+      "options": [
+        "Polar bear",
+        "Elephant",
+        "Penguin",
+        "Lion"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 51,
+      "question": "Which animal has big teeth?",
+      "options": [
+        "Rabbit",
+        "Squirrel",
+        "Beaver",
+        "Duck"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/cheerful-squirrel-superhero-cape_1308-168393.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 52,
+      "question": "Which animal has no legs?",
+      "options": [
+        "Cat",
+        "Lizard",
+        "Snake",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 53,
+      "question": "What animal carries its babies on its back?",
+      "options": [
+        "Cat",
+        "Frog",
+        "Horse",
+        "Sheep"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 54,
+      "question": "Which animal has a mane and roars?",
+      "options": [
+        "Tiger",
+        "Horse",
+        "Lion",
+        "Elephant"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 55,
+      "question": "Which small animal has sharp teeth and loves nuts?",
+      "options": [
+        "Dog",
+        "Squirrel",
+        "Cat",
+        "Rabbit"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 56,
+      "question": "What insect lives in groups and carries food?",
+      "options": [
+        "Bee",
+        "Butterfly",
+        "Spider",
+        "Ant"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 57,
+      "question": "What pet purrs when it's happy?",
+      "options": [
+        "Dog",
+        "Bird",
+        "Cat",
+        "Hamster"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 58,
+      "question": "Which bird is awake at night and says \"hoot\"?",
+      "options": [
+        "Eagle",
+        "Owl",
+        "Duck",
+        "Parrot"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 59,
+      "question": "Which animal lives in water and walks sideways?",
+      "options": [
+        "Turtle",
+        "Crab",
+        "Octopus",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 60,
+      "question": "Which animal can fly and drinks nectar?",
+      "options": [
+        "Butterfly",
+        "Bee",
+        "Fly",
+        "Ant"
+      ],
+      "type": "text",
+      "answer": 1
+    }
+  ]
+}

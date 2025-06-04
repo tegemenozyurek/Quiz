@@ -26,6 +26,11 @@ function App() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [wheelRotation, setWheelRotation] = useState(0);
   const [toysQuestions, setToysQuestions] = useState([]);
+  const [colorsQuestions, setColorsQuestions] = useState([]);
+  const [bodyPartsQuestions, setBodyPartsQuestions] = useState([]);
+  const [animalsQuestions, setAnimalsQuestions] = useState([]);
+  const [foodQuestions, setFoodQuestions] = useState([]);
+  const [actionVerbsQuestions, setActionVerbsQuestions] = useState([]);
   const [randomizedQuestions, setRandomizedQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -55,7 +60,7 @@ function App() {
     { name: 'animals', emoji: '🐕', color: '#43AA8B' },
     { name: 'body parts', emoji: '👁️', color: '#FFBE0B' },
     { name: 'food', emoji: '🍎', color: '#FF8C42' },
-    { name: 'daily routines', emoji: '⏰', color: '#9D4EDD' }
+    { name: 'verbs', emoji: '🏃', color: '#9D4EDD' }
   ];
 
   const wheelAudioRef = useRef(null);
@@ -66,20 +71,34 @@ function App() {
   const [isWheelAudioWarmed, setIsWheelAudioWarmed] = useState(false);
   const [isButtonAudioWarmed, setIsButtonAudioWarmed] = useState(false);
 
-  // Fetch questions from the mock API
+  // Fetch questions from toys.json, colors.json, and bodyParts.json
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://run.mocky.io/v3/bf81e1b3-f31b-40fc-8e68-ef9e61d4d5e4');
-        const data = await response.json();
-        
-        // Use all questions for all categories
-        setToysQuestions(data);
-        console.log('Fetched questions:', data);
+        const [toysResponse, colorsResponse, bodyPartsResponse, animalsResponse, foodResponse, actionVerbsResponse] = await Promise.all([
+          fetch('/questions/toys.json'),
+          fetch('/questions/colors.json'),
+          fetch('/questions/bodyParts.json'),
+          fetch('/questions/animals.json'),
+          fetch('/questions/foods.json'),
+          fetch('/questions/actionVerbs.json')
+        ]);
+        const toysData = await toysResponse.json();
+        const colorsData = await colorsResponse.json();
+        const bodyPartsData = await bodyPartsResponse.json();
+        const animalsData = await animalsResponse.json();
+        const foodData = await foodResponse.json();
+        const actionVerbsData = await actionVerbsResponse.json();
+        setToysQuestions(toysData.questions);
+        setColorsQuestions(colorsData.questions);
+        setBodyPartsQuestions(bodyPartsData.questions);
+        setAnimalsQuestions(animalsData.questions);
+        setFoodQuestions(foodData.questions);
+        setActionVerbsQuestions(actionVerbsData.questions);
+        setIsLoading(false);
       } catch (error) {
         console.error('Error fetching questions:', error);
-      } finally {
         setIsLoading(false);
       }
     };
@@ -189,7 +208,7 @@ function App() {
     }
   }, [isSoundEnabled]);
 
-  // Update spinWheel function to include sound
+  // Update spinWheel function to include animals
   const spinWheel = () => {
     if (isSpinning) return;
     playWheelSound();
@@ -212,17 +231,51 @@ function App() {
 
       setTimeout(() => {
         setShowCategoryReveal(false);
-      if (toysQuestions.length > 0) {
-          const filtered = toysQuestions;
-        const shuffled = shuffleQuestions(filtered).slice(0, 3);
-        setQuestionsForRound(shuffled);
-        setRandomizedQuestions(shuffled);
-        setGameState('question');
-        setQuestionIndex(0);
-        setCurrentQuestion(shuffled[0]);
-      } else {
-        setGameState('result');
-      }
+        if (selectedCategoryName === 'toys' && toysQuestions.length > 0) {
+          const shuffled = shuffleQuestions(toysQuestions).slice(0, 3);
+          setQuestionsForRound(shuffled);
+          setRandomizedQuestions(shuffled);
+          setGameState('question');
+          setQuestionIndex(0);
+          setCurrentQuestion(shuffled[0]);
+        } else if (selectedCategoryName === 'colors' && colorsQuestions.length > 0) {
+          const shuffled = shuffleQuestions(colorsQuestions).slice(0, 3);
+          setQuestionsForRound(shuffled);
+          setRandomizedQuestions(shuffled);
+          setGameState('question');
+          setQuestionIndex(0);
+          setCurrentQuestion(shuffled[0]);
+        } else if (selectedCategoryName === 'body parts' && bodyPartsQuestions.length > 0) {
+          const shuffled = shuffleQuestions(bodyPartsQuestions).slice(0, 3);
+          setQuestionsForRound(shuffled);
+          setRandomizedQuestions(shuffled);
+          setGameState('question');
+          setQuestionIndex(0);
+          setCurrentQuestion(shuffled[0]);
+        } else if (selectedCategoryName === 'animals' && animalsQuestions.length > 0) {
+          const shuffled = shuffleQuestions(animalsQuestions).slice(0, 3);
+          setQuestionsForRound(shuffled);
+          setRandomizedQuestions(shuffled);
+          setGameState('question');
+          setQuestionIndex(0);
+          setCurrentQuestion(shuffled[0]);
+        } else if (selectedCategoryName === 'food' && foodQuestions.length > 0) {
+          const shuffled = shuffleQuestions(foodQuestions).slice(0, 3);
+          setQuestionsForRound(shuffled);
+          setRandomizedQuestions(shuffled);
+          setGameState('question');
+          setQuestionIndex(0);
+          setCurrentQuestion(shuffled[0]);
+        } else if (selectedCategoryName === 'verbs' && actionVerbsQuestions.length > 0) {
+          const shuffled = shuffleQuestions(actionVerbsQuestions).slice(0, 3);
+          setQuestionsForRound(shuffled);
+          setRandomizedQuestions(shuffled);
+          setGameState('question');
+          setQuestionIndex(0);
+          setCurrentQuestion(shuffled[0]);
+        } else {
+          setGameState('result');
+        }
       }, 2000);
     }, 3000);
   };
@@ -268,7 +321,7 @@ function App() {
       const nextRound = roundCount + 1;
       if (nextRound > maxRounds) {
         // Game is complete
-        const finalScore = allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].correctIndex).length;
+        const finalScore = allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].answer).length;
         setScore(finalScore);
         setGameState('gameover');
       } else {
@@ -279,7 +332,7 @@ function App() {
     }
   };
 
-  // Update answerQuestion function to include sound
+  // Update answerQuestion function to use answer instead of correctIndex
   const answerQuestion = (index) => {
     if (showFeedback) return;
     setSelectedAnswer(index);
@@ -294,10 +347,10 @@ function App() {
     setAllQuestionsHistory(prev => [...prev, currentQuestion]);
     setAllAnswersHistory(prev => [...prev, index]);
     
-      if (index === currentQuestion.correctIndex) {
+    if (index === currentQuestion.answer) {
       playCorrectSound();
       setShowConfetti(true);
-      setScore(prevScore => prevScore + 1); // Update score immediately
+      setScore(prevScore => prevScore + 1);
       setTimeout(() => {
         setShowConfetti(false);
       }, 2000);
@@ -310,11 +363,11 @@ function App() {
     }, 1500);
   };
 
-  // Remove one option logic
+  // Update handleRemoveOneOption function to use answer instead of correctIndex
   const handleRemoveOneOption = () => {
     if (removeOptionUsed || showFeedback) return;
     // Find incorrect options
-    const incorrectOptions = [0,1,2,3].filter(idx => idx !== currentQuestion.correctIndex && idx !== eliminatedOption);
+    const incorrectOptions = [0,1,2,3].filter(idx => idx !== currentQuestion.answer && idx !== eliminatedOption);
     if (incorrectOptions.length > 0) {
       playButtonSound();
       const toEliminate = incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)];
@@ -979,9 +1032,9 @@ function App() {
                   whiteSpace: 'nowrap',
                   minWidth: 0
                 }}>
-                  <span style={{color:'#4ECDC4'}}>✓</span>{allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].correctIndex).length}
+                  <span style={{color:'#4ECDC4'}}>✓</span>{allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].answer).length}
                   <span style={{margin:'0 2px'}}>|</span>
-                  <span style={{color:'#ff4444'}}>✗</span>{allAnswersHistory.filter((ans, i) => ans !== allQuestionsHistory[i].correctIndex).length}
+                  <span style={{color:'#ff4444'}}>✗</span>{allAnswersHistory.filter((ans, i) => ans !== allQuestionsHistory[i].answer).length}
                 </div>
               </div>
             </div>
@@ -1039,14 +1092,14 @@ function App() {
                   boxSizing: 'border-box',
                   flex: '0 0 auto',
                   overflow: 'hidden',
-                  ...(currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.imageURL)
+                  ...(currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image)
                     ? { justifyContent: 'center', alignItems: 'center', flex: 1, height: '180px', minHeight: '180px', padding: 0 } : {})
                 }}
               >
-                {currentQuestion && currentQuestion.type === 'image' && currentQuestion.imageURL ? (
+                {currentQuestion && currentQuestion.type === 'image' && currentQuestion.image ? (
                   <div className="question-image" style={{marginBottom:12}}>
                     <img 
-                      src={currentQuestion.imageURL} 
+                      src={currentQuestion.image} 
                       alt="Question image" 
                       className="question-img"
                       style={{width:120,height:120,objectFit:'contain',background:'#fff',borderRadius:16,boxShadow:'0 2px 8px #0001',border:'2px solid #eee'}}
@@ -1055,9 +1108,9 @@ function App() {
                 ) : null}
                 <div
                   style={{
-                    marginBottom: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.imageURL) ? 0 : 10,
+                    marginBottom: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image) ? 0 : 10,
                     fontSize:
-                      currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.imageURL)
+                      currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image)
                         ? '1.25rem'
                         : '1.08rem',
                     fontWeight: 600,
@@ -1066,12 +1119,12 @@ function App() {
                     width: '100%',
                     display: 'flex',
                     alignItems:
-                      currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.imageURL)
+                      currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image)
                         ? 'center'
                         : 'flex-start',
                     justifyContent: 'center',
-                    flex: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.imageURL) ? 1 : undefined,
-                    height: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.imageURL) ? '100%' : undefined
+                    flex: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image) ? 1 : undefined,
+                    height: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image) ? '100%' : undefined
                   }}
                 >
                   {currentQuestion?.question}
@@ -1091,10 +1144,10 @@ function App() {
                 justifyContent: 'flex-start',
                 overflow: 'hidden'
               }}>
-                {[currentQuestion.option0,currentQuestion.option1,currentQuestion.option2,currentQuestion.option3].map((option, index) => {
+                {currentQuestion?.options?.map((option, index) => {
                   let btnClass = 'option-button';
                   if (showFeedback) {
-                    if (index === currentQuestion.correctIndex) btnClass += ' correct';
+                    if (index === currentQuestion.answer) btnClass += ' correct';
                     else if (index === selectedAnswer) btnClass += ' incorrect';
                   }
                   return (
@@ -1190,6 +1243,46 @@ function App() {
                 <div className="category-result">
                   <div className="selected-category-emoji">🧸</div>
                   <div className="selected-category-name">TOYS</div>
+                </div>
+                <div className="final-score">
+                  You scored {score} out of {randomizedQuestions.length}!
+                </div>
+              </div>
+            ) : selectedCategory === 'colors' ? (
+              <div>
+                <div className="category-result">
+                  <div className="selected-category-emoji">🌈</div>
+                  <div className="selected-category-name">COLORS</div>
+                </div>
+                <div className="final-score">
+                  You scored {score} out of {randomizedQuestions.length}!
+                </div>
+              </div>
+            ) : selectedCategory === 'body parts' ? (
+              <div>
+                <div className="category-result">
+                  <div className="selected-category-emoji">👁️</div>
+                  <div className="selected-category-name">BODY PARTS</div>
+                </div>
+                <div className="final-score">
+                  You scored {score} out of {randomizedQuestions.length}!
+                </div>
+              </div>
+            ) : selectedCategory === 'animals' ? (
+              <div>
+                <div className="category-result">
+                  <div className="selected-category-emoji">🐕</div>
+                  <div className="selected-category-name">ANIMALS</div>
+                </div>
+                <div className="final-score">
+                  You scored {score} out of {randomizedQuestions.length}!
+                </div>
+              </div>
+            ) : selectedCategory === 'food' ? (
+              <div>
+                <div className="category-result">
+                  <div className="selected-category-emoji">🍎</div>
+                  <div className="selected-category-name">FOOD</div>
                 </div>
                 <div className="final-score">
                   You scored {score} out of {randomizedQuestions.length}!
@@ -1292,7 +1385,7 @@ function App() {
                     fontSize: '24px',
                     fontWeight: '800'
                   }}>
-                    {allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].correctIndex).length}
+                    {allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].answer).length}
                   </div>
                   <div style={{
                     color: '#fff',
@@ -1328,7 +1421,7 @@ function App() {
                     fontSize: '24px',
                     fontWeight: '800'
                   }}>
-                    {allAnswersHistory.filter((ans, i) => ans !== allQuestionsHistory[i].correctIndex).length}
+                    {allAnswersHistory.filter((ans, i) => ans !== allQuestionsHistory[i].answer).length}
                   </div>
                   <div style={{
                     color: '#fff',
@@ -1354,7 +1447,7 @@ function App() {
                 const roundAnswers = allAnswersHistory.slice(startIndex, endIndex);
                 
                 // Show the round even if there are no questions
-                const correctCount = roundAnswers.filter((ans, i) => ans === roundQuestions[i]?.correctIndex).length;
+                const correctCount = roundAnswers.filter((ans, i) => ans === roundQuestions[i]?.answer).length;
                 const wrongCount = roundAnswers.length - correctCount;
 
                 return (
@@ -1423,7 +1516,7 @@ function App() {
                           
                           return (
                             <div key={index} style={{
-                              background: answer === question.correctIndex ? 
+                              background: answer === question.answer ? 
                                 'rgba(78,205,196,0.2)' : 'rgba(255,75,75,0.2)',
                               padding: '15px',
                               borderRadius: '12px',
@@ -1439,7 +1532,7 @@ function App() {
                                   fontSize: '18px',
                                   opacity: 0.9
                                 }}>
-                                  {answer === question.correctIndex ? '✓' : '✗'}
+                                  {answer === question.answer ? '✓' : '✗'}
                                 </span>
                                 <span style={{flex: 1}}>{question.question}</span>
                               </div>
@@ -1454,8 +1547,8 @@ function App() {
                                   <div key={optIndex} style={{
                                     padding: '8px',
                                     background: answer === optIndex ? 
-                                      (question.correctIndex === optIndex ? 'rgba(78,205,196,0.3)' : 'rgba(255,75,75,0.3)') :
-                                      (question.correctIndex === optIndex ? 'rgba(78,205,196,0.3)' : 'rgba(255,255,255,0.1)'),
+                                      (question.answer === optIndex ? 'rgba(78,205,196,0.3)' : 'rgba(255,75,75,0.3)') :
+                                      (question.answer === optIndex ? 'rgba(78,205,196,0.3)' : 'rgba(255,255,255,0.1)'),
                                     borderRadius: '8px'
                                   }}>
                                     {option}

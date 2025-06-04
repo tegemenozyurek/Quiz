@@ -1,0 +1,746 @@
+{
+  "category": "ACTION VERBS",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What do you do with your eyes?",
+      "options": [
+        "Run",
+        "Eat",
+        "See",
+        "Jump"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 2,
+      "question": "Look at the picture. What is the boy doing?",
+      "options": [
+        "Sleeping",
+        "Drawing",
+        "Jumping",
+        "Eating"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-photo/happiness-childhood-freedom-movement-people-concept-happy-smiling-boy-jumping-air_380164-112534.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 3,
+      "question": "What do you do when you are tired?",
+      "options": [
+        "Read",
+        "Sleep",
+        "Swim",
+        "Sing"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 4,
+      "question": "Look at the picture. What is she doing?",
+      "options": [
+        "Singing",
+        "Running",
+        "Drawing",
+        "Climbing"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/vector-illustration-singers-cartoon-scene-with-girl-who-sings-melodies-fly-around-her-white-background_812561-650.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 5,
+      "question": "What do you do with your feet?",
+      "options": [
+        "Dance",
+        "Paint",
+        "Write",
+        "Listen"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 6,
+      "question": "Look at the picture. What is the man doing?",
+      "options": [
+        "Playing",
+        "Eating",
+        "Reading",
+        "Kicking"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/man-eating-burger-illustration-isolated_24911-115041.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 7,
+      "question": "Which action verb means \"to move fast on your feet\"?",
+      "options": [
+        "Walk",
+        "Run",
+        "Sit",
+        "Sleep"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 8,
+      "question": "What do you do with a pencil?",
+      "options": [
+        "Kick",
+        "Draw",
+        "Jump",
+        "Sleep"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 9,
+      "question": "Look at the picture. What are the children doing?",
+      "options": [
+        "Sleeping",
+        "Eating",
+        "Running",
+        "Talking"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-photo/healthy-lifestyle-running-outdoors_23-2151847260.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 10,
+      "question": "Which action verb is for using your voice in music?",
+      "options": [
+        "Jump",
+        "Sing",
+        "Write",
+        "Run"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 11,
+      "question": "What action verb means \"to move to music\"?",
+      "options": [
+        "Eat",
+        "Sleep",
+        "Read",
+        "Dance"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 12,
+      "question": "Look at the picture. What is the girl doing?",
+      "options": [
+        "Jumping",
+        "Sleeping",
+        "Dancing",
+        "Climbing"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/cute-girl-sleeping-cartoon-character-isolated_1308-48949.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 13,
+      "question": "What do you do in bed at night?",
+      "options": [
+        "Run",
+        "Swim",
+        "Sleep",
+        "Draw"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 14,
+      "question": "Which action verb means \"to go up\"?",
+      "options": [
+        "Run",
+        "Jump",
+        "Climb",
+        "Dance"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 15,
+      "question": "Look at the picture. What is he doing?",
+      "options": [
+        "Reading",
+        "Writing",
+        "Kicking",
+        "Playing"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/boy-is-sitting-with-book-word-word-it_1016520-53305.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 16,
+      "question": "What do you do in the swimming pool?",
+      "options": [
+        "Read",
+        "Sing",
+        "Swim",
+        "Dance"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 17,
+      "question": "Look at the picture. What is the girl doing?",
+      "options": [
+        "Eating",
+        "Swimming",
+        "Writing",
+        "Playing"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/premium-vector/cartoon-little-girl-swimmer-swimming-pool_122297-5616.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 18,
+      "question": "What do you do with your legs to go high?",
+      "options": [
+        "Sit",
+        "Sleep",
+        "Jump",
+        "Draw"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 19,
+      "question": "Which action verb means \"to rest your body with closed eyes\"?",
+      "options": [
+        "Run",
+        "Dance",
+        "Talk",
+        "Sleep"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 20,
+      "question": "Look at the picture. What is the boy doing?",
+      "options": [
+        "Climbing",
+        "Writing",
+        "Running",
+        "Kicking"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-vector/boy-playing-football_1308-132029.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 21,
+      "question": "What do you do to make a picture?",
+      "options": [
+        "Eat",
+        "Draw",
+        "Swim",
+        "Run"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 22,
+      "question": "What action uses your ears?",
+      "options": [
+        "Sing",
+        "Listen",
+        "Jump",
+        "Paint"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 23,
+      "question": "Look at the picture. What is the girl doing?",
+      "options": [
+        "Dancing",
+        "Drawing",
+        "Sleeping",
+        "Reading"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/woman-dinosaur-painting-garden_1308-133185.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 24,
+      "question": "What do you do to music with your ears?",
+      "options": [
+        "Dance",
+        "Paint",
+        "Listen",
+        "Eat"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 25,
+      "question": "What do you do when you have a ball and friends?",
+      "options": [
+        "Play",
+        "Read",
+        "Draw",
+        "Kick"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 26,
+      "question": "Look at the picture. What is he doing?",
+      "options": [
+        "Running",
+        "Singing",
+        "Sleeping",
+        "Dancing"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-photo/young-woman-sleeping-bed-home_1048944-7680270.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 27,
+      "question": "Which verb means \"to use a pen or pencil\"?",
+      "options": [
+        "Sleep",
+        "Write",
+        "Dance",
+        "Jump"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 28,
+      "question": "What action verb is the opposite of \"stand\"?",
+      "options": [
+        "Sit",
+        "Run",
+        "Kick",
+        "Draw"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 29,
+      "question": "Look at the picture. What is the boy doing?",
+      "options": [
+        "Jumping",
+        "Drawing",
+        "Eating",
+        "Sitting"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-vector/cartoon-teenage-boy-character_1308-133622.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 30,
+      "question": "Which action verb means \"to use your foot to move something\"?",
+      "options": [
+        "Jump",
+        "Kick",
+        "Dance",
+        "Sleep"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 31,
+      "question": "What do you do to a door to open it?",
+      "options": [
+        "Pull",
+        "Draw",
+        "Kick",
+        "Throw"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 32,
+      "question": "Look at the picture. What is he doing?",
+      "options": [
+        "Reading",
+        "Eating",
+        "Sleeping",
+        "Writing"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-vector/boy-wearing-scientist-gown-with-empty-paper-table_1308-62902.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 33,
+      "question": "Which verb means \"to speak loudly and happily\"?",
+      "options": [
+        "Cry",
+        "Laugh",
+        "Write",
+        "Read"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 34,
+      "question": "What do you do with a book?",
+      "options": [
+        "Eat",
+        "Kick",
+        "Read",
+        "Swim"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 35,
+      "question": "Look at the picture. What is the girl doing?",
+      "options": [
+        "Reading",
+        "Drawing",
+        "Climbing",
+        "Writing"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/young-woman-reading-korean-drawing-style_52683-26614.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 36,
+      "question": "What action verb do you use to go upstairs?",
+      "options": [
+        "Climb",
+        "Run",
+        "Sit",
+        "Swim"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 37,
+      "question": "Which verb means \"to go down slowly\"?",
+      "options": [
+        "Read",
+        "Slide",
+        "Eat",
+        "Dance"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 38,
+      "question": "Look at the picture. What is the girl doing?",
+      "options": [
+        "Jumping",
+        "Sliding",
+        "Swimming",
+        "Writing"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/girl-sliding-down-slide_1308-106496.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 39,
+      "question": "What do you do when you're happy and want to move to music?",
+      "options": [
+        "Draw",
+        "Kick",
+        "Dance",
+        "Sleep"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 40,
+      "question": "What do you do when you want to relax and listen to someone?",
+      "options": [
+        "Swim",
+        "Listen",
+        "Jump",
+        "Write"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 41,
+      "question": "Look at the picture. What is the boy doing?",
+      "options": [
+        "Singing",
+        "Drawing",
+        "Listening",
+        "Climbing"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/boy-sitting-floor-listening-music-with-headset_1308-150568.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 42,
+      "question": "Which verb means \"to use your hands and fingers to create words\"?",
+      "options": [
+        "Write",
+        "Jump",
+        "Eat",
+        "Play"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 43,
+      "question": "What do you do with a ball?",
+      "options": [
+        "Eat",
+        "Sleep",
+        "Throw",
+        "Read"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 44,
+      "question": "Look at the picture. What is the child doing?",
+      "options": [
+        "Drawing",
+        "Throwing",
+        "Running",
+        "Singing"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/premium-vector/happy-boys-play-baseball-vector-flat-illustration_650087-232.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&w=740"
+    },
+    {
+      "id": 45,
+      "question": "Which verb means \"to make a loud sound when you are happy\"?",
+      "options": [
+        "Cry",
+        "Kick",
+        "Laugh",
+        "Sleep"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 46,
+      "question": "What do you do when someone tells a funny joke?",
+      "options": [
+        "Laugh",
+        "Read",
+        "Eat",
+        "Climb"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 47,
+      "question": "Look at the picture. What is the girl doing?",
+      "options": [
+        "Crying",
+        "Writing",
+        "Laughing",
+        "Drawing"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-photo/portrait-smiling-young-woman-against-pink-background_1048944-9270228.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 48,
+      "question": "Which verb means \"to speak words\"?",
+      "options": [
+        "Eat",
+        "Kick",
+        "Talk",
+        "Draw"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 49,
+      "question": "What do you do with your mouth to talk?",
+      "options": [
+        "Sing",
+        "Listen",
+        "Speak",
+        "Kick"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 50,
+      "question": "Look at the picture. What is the boy doing?",
+      "options": [
+        "Singing",
+        "Listening",
+        "Talking",
+        "Sleeping"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-vector/vector-illustration-happy-cute-kids-student-talking_723224-3292.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 51,
+      "question": "Which verb means \"to cry out loudly when in pain or scared\"?",
+      "options": [
+        "Shout",
+        "Laugh",
+        "Sleep",
+        "Draw"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 52,
+      "question": "What action do you use when calling your friend loudly?",
+      "options": [
+        "Whisper",
+        "Shout",
+        "Dance",
+        "Read"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 53,
+      "question": "Look at the picture. What is the girl doing?",
+      "options": [
+        "Singing",
+        "Jumping",
+        "Shouting",
+        "Drawing"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-photo/young-woman-with-long-hair-isolated-yellow-wall-shouting-announcing-something_1368-40509.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 54,
+      "question": "What do you do when you feel pain?",
+      "options": [
+        "Laugh",
+        "Read",
+        "Cry",
+        "Draw"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 55,
+      "question": "Which action means \"to put your body down on the ground\"?",
+      "options": [
+        "Sit",
+        "Lie down",
+        "Jump",
+        "Kick"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 56,
+      "question": "Look at the picture. What is the child doing?",
+      "options": [
+        "Dancing",
+        "Lying down",
+        "Running",
+        "Writing"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/premium-vector/cute-boy-lying-down-green-lawn-kid-lying-grass-dreamily-looking-into-sky-cartoon-vector-illustration_178650-40260.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 57,
+      "question": "What do you do to make your voice louder than usual?",
+      "options": [
+        "Whisper",
+        "Sing",
+        "Shout",
+        "Sleep"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 58,
+      "question": "What action means \"to speak very softly\"?",
+      "options": [
+        "Shout",
+        "Whisper",
+        "Talk",
+        "Laugh"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 59,
+      "question": "Look at the picture. What is the boy doing?",
+      "options": [
+        "Singing",
+        "Whispering",
+        "Drawing",
+        "Running"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/premium-photo/two-children-told-gossip-isolated-white-background_58409-7431.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 60,
+      "question": "Which verb means \"to use your hands and body to go up something\"?",
+      "options": [
+        "Swim",
+        "Write",
+        "Climb",
+        "Run"
+      ],
+      "type": "text",
+      "answer": 2
+    }
+  ]
+}

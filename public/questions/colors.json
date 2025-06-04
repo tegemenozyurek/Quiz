@@ -1,0 +1,755 @@
+{
+  "category": "COLORS",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which one is the color of the sky?",
+      "options": [
+        "Green",
+        "Blue",
+        "Red",
+        "Yellow"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-photo/white-cloud-blue-sky-sea_74190-4488.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 2,
+      "question": "Which color is made by mixing red and blue?",
+      "options": [
+        "Pink",
+        "Orange",
+        "Purple",
+        "Brown"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 3,
+      "question": "Which color is the sun?",
+      "options": [
+        "Yellow",
+        "Black",
+        "Blue",
+        "Green"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/svg-file-icon-color-vector-illustration_755164-2602.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 4,
+      "question": "Which one is NOT a color?",
+      "options": [
+        "Chair",
+        "Blue",
+        "Pink",
+        "Orange"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 5,
+      "question": "Which color is the grass?",
+      "options": [
+        "Red",
+        "Purple",
+        "Blue",
+        "Green"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/premium-photo/green-grass-white-background_1025556-60159.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 6,
+      "question": "Which one is the color of Fish?",
+      "options": [
+        "Green",
+        "Purple",
+        "Blue",
+        "Yellow"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/cute-fish-sea-animal-cartoon-sticker_1308-60538.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 7,
+      "question": "Which color is a mix of yellow and blue?",
+      "options": [
+        "Green",
+        "Orange",
+        "Purple",
+        "Pink"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 8,
+      "question": "Which one is a warm color?",
+      "options": [
+        "Blue",
+        "Purple",
+        "Red",
+        "Black"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 9,
+      "question": "What color is a banana?",
+      "options": [
+        "Yellow",
+        "Red",
+        "Green",
+        "Pink"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 10,
+      "question": "Which color is made by mixing red and white?",
+      "options": [
+        "Purple",
+        "Pink",
+        "Orange",
+        "Grey"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 11,
+      "question": "Which color is usually used for stop signs?",
+      "options": [
+        "Blue",
+        "Yellow",
+        "Red",
+        "Green"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 12,
+      "question": "What color are most apples?",
+      "options": [
+        "Red",
+        "Blue",
+        "Purple",
+        "Grey"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 13,
+      "question": "Which color do we see at night sky?",
+      "options": [
+        "White",
+        "Black",
+        "Yellow",
+        "Orange"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 14,
+      "question": "Which one is the color of oranges?",
+      "options": [
+        "Green",
+        "Yellow",
+        "Orange",
+        "Red"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 15,
+      "question": "Which color is between black and white?",
+      "options": [
+        "Blue",
+        "Grey",
+        "Pink",
+        "Red"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 16,
+      "question": "Which one is a cool color?",
+      "options": [
+        "Red",
+        "Orange",
+        "Yellow",
+        "Blue"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 17,
+      "question": "Which color is the opposite of black?",
+      "options": [
+        "Blue",
+        "Yellow",
+        "White",
+        "Green"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-photo/photo-design-space-paper-textured-background_707519-8167.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 18,
+      "question": "Which one is the color of chocolate?",
+      "options": [
+        "Brown",
+        "Orange",
+        "Red",
+        "Purple"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-photo/vertical-shot-stacked-chocolates-white-background_181624-57395.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 19,
+      "question": "Which color is often used for love?",
+      "options": [
+        "Black",
+        "Pink",
+        "Blue",
+        "Green"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 20,
+      "question": "What color is a banana?",
+      "options": [
+        "Purple",
+        "Yellow",
+        "Red",
+        "Blue"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/simple-isolated-banana_1308-125007.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 21,
+      "question": "What color is a strawberry?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Brown"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/strawberry-fresh-fruit-icon-isolated_24640-134407.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 22,
+      "question": "Which color is made from red and yellow?",
+      "options": [
+        "Green",
+        "Purple",
+        "Orange",
+        "Pink"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 23,
+      "question": "Which one is a pastel color?",
+      "options": [
+        "Light pink",
+        "Dark green",
+        "Black",
+        "Navy"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 24,
+      "question": "Which color is often used for warning signs?",
+      "options": [
+        "White",
+        "Blue",
+        "Pink",
+        "Yellow"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 25,
+      "question": "What color is a watermelon's outside?",
+      "options": [
+        "Yellow",
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/watermelon-stand-with-empty-wooden-signboard_1308-35701.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 26,
+      "question": "What color is the sea?",
+      "options": [
+        "Blue",
+        "Red",
+        "Orange",
+        "Brown"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-photo/ombre-blue-watercolor-background-abstract-style_53876-108192.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 27,
+      "question": "Which color is used for Halloween with black?",
+      "options": [
+        "Pink",
+        "Orange",
+        "Yellow",
+        "White"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 28,
+      "question": "Which color do cows usually have along with white?",
+      "options": [
+        "Red",
+        "Blue",
+        "Black",
+        "Green"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/cow-farm-animal-cartoon-sticker_1308-74715.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 29,
+      "question": "Which color do we associate with nature?",
+      "options": [
+        "Green",
+        "Red",
+        "Pink",
+        "Grey"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/serene-forest-vector-illustration_1308-164260.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 30,
+      "question": "Which one is the color of clouds?",
+      "options": [
+        "Black",
+        "White",
+        "Red",
+        "Blue"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/white-fluffy-clouds-blue-sky_107791-1180.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 31,
+      "question": "What color is the tree?",
+      "options": [
+        "Green",
+        "Orange",
+        "Blue",
+        "Pink"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/isolated-tree-white-background_1308-26130.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 32,
+      "question": "What color is a typical lemon?",
+      "options": [
+        "Red",
+        "Yellow",
+        "Blue",
+        "Purple"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/lemons-watercolor-illustration_79020-217.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 33,
+      "question": "What color is this fruit?",
+      "options": [
+        "Purple",
+        "Green",
+        "Red",
+        "Blue"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-photo/fresh-blueberries-white-background_1268-29128.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 34,
+      "question": "What color is the frog?",
+      "options": [
+        "Yellow",
+        "Green",
+        "Brown",
+        "Red"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/green-frog-white-background_1308-110146.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 35,
+      "question": "What color is milk?",
+      "options": [
+        "Yellow",
+        "White",
+        "Blue",
+        "Green"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/milk-carton-box-with-glass_1308-123381.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 36,
+      "question": "You are eating a red fruit. What is it?",
+      "options": [
+        "Banana",
+        "Apple",
+        "Orange",
+        "Grape"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 37,
+      "question": "Which color means \"go\" in traffic lights?",
+      "options": [
+        "Red",
+        "Yellow",
+        "Green",
+        "Blue"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 38,
+      "question": "What color is the orange juice?",
+      "options": [
+        "Purple",
+        "Orange",
+        "Red",
+        "Blue"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-photo/delicious-homemade-orange-juice-with-copy-space_23-2148531887.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 39,
+      "question": "The duck is white. Where is the yellow duck?",
+      "options": [
+        "In the water",
+        "In the sky",
+        "In the tree",
+        "On the truck"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-photo/high-angle-shot-white-american-pekin-duck-swimming-pond_181624-35526.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 40,
+      "question": "Which fruit is purple?",
+      "options": [
+        "Banana",
+        "Strawberry",
+        "Grapes",
+        "Watermelon"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/coloured-fruits-collection_1308-577.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 41,
+      "question": "Which color do pumpkins have?",
+      "options": [
+        "Orange",
+        "Yellow",
+        "Blue",
+        "Green"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 42,
+      "question": "Which color do flamingos have?",
+      "options": [
+        "Blue",
+        "Pink",
+        "Black",
+        "Green"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/set-pink-flamingos-with-different-postures_23-2147810443.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 43,
+      "question": "What color is this soap?",
+      "options": [
+        "Red",
+        "Yellow",
+        "Blue",
+        "Green"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-psd/fresh-green-soap-bar-with-splashing-water-leaves-transparent-background_84443-25810.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 44,
+      "question": "What color is the lollipop?",
+      "options": [
+        "White",
+        "Green",
+        "Pink",
+        "Orange"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/candy-retro-icon_24911-115734.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 45,
+      "question": "Which one is a shade of green?",
+      "options": [
+        "Olive",
+        "Purple",
+        "Black",
+        "Pink"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/olive-leaf-tree_24911-115249.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 46,
+      "question": "Which one is NOT a shade of blue?",
+      "options": [
+        "Navy",
+        "Sky",
+        "Lemon",
+        "Aqua"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 47,
+      "question": "Which color is associated with gold and money?",
+      "options": [
+        "Yellow",
+        "Black",
+        "Blue",
+        "Grey"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 48,
+      "question": "What color is the inside of a watermelon?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Orange"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-photo/wheel-made-with-watermelon-slices-isolated-white-background_23-2148103688.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 49,
+      "question": "What color is the cupcake?",
+      "options": [
+        "Red",
+        "Yellow",
+        "White",
+        "Pink"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-vector/cupcake-with-pink-cream-top_1308-97089.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 50,
+      "question": "Which color is close to black but not fully black?",
+      "options": [
+        "Grey",
+        "Blue",
+        "Purple",
+        "Orange"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 51,
+      "question": "Which one is not typically seen in rainbows?",
+      "options": [
+        "Indigo",
+        "Pink",
+        "Green",
+        "Orange"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/rainbow-flat-colour_78370-5319.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 52,
+      "question": "Which color do carrots usually have?",
+      "options": [
+        "Red",
+        "Orange",
+        "Yellow",
+        "Green"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 53,
+      "question": "Which one is often the color of the moon?",
+      "options": [
+        "White",
+        "Purple",
+        "Pink",
+        "Red"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/vector-illustration-full-moon-close-up-around-stars_1284-42218.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 54,
+      "question": "Which color is closest to the color of coffee?",
+      "options": [
+        "Brown",
+        "Blue",
+        "Green",
+        "Red"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 55,
+      "question": "This animal lives on a farm and has a curly tail. What color is it?",
+      "options": [
+        "Pink",
+        "Grey",
+        "Black",
+        "White"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/cute-pig-with-pink-skin-white_1308-40061.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 56,
+      "question": "Which one is used in Christmas with red?",
+      "options": [
+        "Green",
+        "Blue",
+        "Yellow",
+        "Grey"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 57,
+      "question": "Which color is often used for love hearts?",
+      "options": [
+        "Pink",
+        "Brown",
+        "Orange",
+        "Blue"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 58,
+      "question": "Which one is usually used for cold or winter themes?",
+      "options": [
+        "Blue",
+        "Red",
+        "Yellow",
+        "Green"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 59,
+      "question": "Which one is darker than yellow but lighter than brown?",
+      "options": [
+        "Gold",
+        "Blue",
+        "Red",
+        "Black"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 60,
+      "question": "Which color is the opposite of white?",
+      "options": [
+        "Black",
+        "Grey",
+        "Green",
+        "Blue"
+      ],
+      "type": "text",
+      "answer": 0
+    }
+  ]
+}

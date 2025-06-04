@@ -1,0 +1,747 @@
+{
+  "category": "BODY PARTS",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which body part do we use to see?",
+      "options": [
+        "Nose",
+        "Eyes",
+        "Hands",
+        "Feet"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/hand-drawn-blue-eyes-cartoon-illustration_23-2150556955.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 2,
+      "question": "What do we use to smell?",
+      "options": [
+        "Ears",
+        "Eyes",
+        "Nose",
+        "Legs"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 3,
+      "question": "Which one helps us to walk?",
+      "options": [
+        "Hands",
+        "Feet",
+        "Ears",
+        "Mouth"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 4,
+      "question": "What do we use to hear?",
+      "options": [
+        "Eyes",
+        "Nose",
+        "Mouth",
+        "Ears"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 5,
+      "question": "Which one is on your face?",
+      "options": [
+        "Elbow",
+        "Shoulder",
+        "Nose",
+        "Knee"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/southeast-asian-man-cartoon-illustration-vibrant-vector-portrait_1308-153741.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 6,
+      "question": "Which body part has fingers?",
+      "options": [
+        "Head",
+        "Hand",
+        "Leg",
+        "Toe"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/human-hand-vector-illustration_1308-172136.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 7,
+      "question": "Where do we wear shoes?",
+      "options": [
+        "Hands",
+        "Ears",
+        "Feet",
+        "Shoulders"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 8,
+      "question": "What helps you to taste food?",
+      "options": [
+        "Nose",
+        "Tongue",
+        "Eyes",
+        "Hair"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 9,
+      "question": "Which one bends in your arm?",
+      "options": [
+        "Knee",
+        "Ankle",
+        "Elbow",
+        "Wrist"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 10,
+      "question": "What is above your neck?",
+      "options": [
+        "Head",
+        "Leg",
+        "Stomach",
+        "Foot"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 11,
+      "question": "Where do you wear a hat?",
+      "options": [
+        "Knee",
+        "Head",
+        "Shoulder",
+        "Toe"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/handsome-man-wearing-hat-cartoon_1308-146607.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 12,
+      "question": "Which part is between your shoulder and hand?",
+      "options": [
+        "Foot",
+        "Elbow",
+        "Arm",
+        "Eye"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 13,
+      "question": "What do we use to smile?",
+      "options": [
+        "Ears",
+        "Mouth",
+        "Eyes",
+        "Nose"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 14,
+      "question": "Where do you wear gloves?",
+      "options": [
+        "Head",
+        "Feet",
+        "Hands",
+        "Ears"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/protective-gloves-concept_23-2148504395.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 15,
+      "question": "What has toes?",
+      "options": [
+        "Fingers",
+        "Hands",
+        "Elbows",
+        "Feet"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 16,
+      "question": "Which part do we use to kick a ball?",
+      "options": [
+        "Arm",
+        "Head",
+        "Foot",
+        "Ear"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/boy-playing-soccer-cartoon-character-sticker_1308-72228.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 17,
+      "question": "Which one is on your leg?",
+      "options": [
+        "Wrist",
+        "Knee",
+        "Neck",
+        "Mouth"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 18,
+      "question": "What is between your chest and legs?",
+      "options": [
+        "Neck",
+        "Mouth",
+        "Stomach",
+        "Eye"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 19,
+      "question": "What helps you to bend your leg?",
+      "options": [
+        "Knee",
+        "Nose",
+        "Finger",
+        "Tongue"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 20,
+      "question": "Where is your hair?",
+      "options": [
+        "On your foot",
+        "On your arm",
+        "On your head",
+        "On your chest"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/cheerful-curlyhaired-girl-illustration_1308-164185.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 21,
+      "question": "Which body part is used to touch?",
+      "options": [
+        "Eye",
+        "Finger",
+        "Ear",
+        "Nose"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 22,
+      "question": "Which one is NOT on your face?",
+      "options": [
+        "Eye",
+        "Nose",
+        "Knee",
+        "Mouth"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 23,
+      "question": "What is between your hand and elbow?",
+      "options": [
+        "Arm",
+        "Neck",
+        "Foot",
+        "Head"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 24,
+      "question": "Which part helps you to chew food?",
+      "options": [
+        "Teeth",
+        "Nose",
+        "Ears",
+        "Toes"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 25,
+      "question": "What connects your head to your body?",
+      "options": [
+        "Leg",
+        "Neck",
+        "Shoulder",
+        "Wrist"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/premium-vector/neck-icon-cartoon-illustration-neck-vector-icon-web-design_96318-24163.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 26,
+      "question": "Which body part do we use to clap?",
+      "options": [
+        "Hands",
+        "Feet",
+        "Ears",
+        "Legs"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/flat-design-praying-hands-cartoon-illustration_23-2150918341.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 27,
+      "question": "Where do you wear socks?",
+      "options": [
+        "Ears",
+        "Feet",
+        "Hands",
+        "Head"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 28,
+      "question": "Which body part helps us to run?",
+      "options": [
+        "Eyes",
+        "Arms",
+        "Legs",
+        "Mouth"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-vector/kids-running-white-background_1308-10768.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 29,
+      "question": "Which one has nails?",
+      "options": [
+        "Teeth",
+        "Nose",
+        "Eyes",
+        "Fingers"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 30,
+      "question": "Which one helps you to lift things?",
+      "options": [
+        "Arm",
+        "Foot",
+        "Nose",
+        "Ear"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 31,
+      "question": "Which part helps you write?",
+      "options": [
+        "Leg",
+        "Ear",
+        "Hand",
+        "Nose"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 32,
+      "question": "Where is your eyebrow?",
+      "options": [
+        "On your chin",
+        "Above your eye",
+        "On your hand",
+        "Below your mouth"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-psd/view-hand-drawn-eye_23-2151537528.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 33,
+      "question": "What do you use to blink?",
+      "options": [
+        "Hands",
+        "Feet",
+        "Eyelids",
+        "Toes"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 34,
+      "question": "Which part helps you listen to music?",
+      "options": [
+        "Ears",
+        "Mouth",
+        "Hands",
+        "Nose"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/sport-garlic-meditating-listening-music-gym-fruit-with-face-happy-character-funny-garlic-illustration_277904-4006.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 35,
+      "question": "Where is your chin?",
+      "options": [
+        "On your back",
+        "On your arm",
+        "On your foot",
+        "Under your nose"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 36,
+      "question": "Which part helps you taste yummy ice cream?",
+      "options": [
+        "Eyes",
+        "Hands",
+        "Tongue",
+        "Nose"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 37,
+      "question": "Which one is NOT on your hand?",
+      "options": [
+        "Palm",
+        "Thumb",
+        "Finger",
+        "Toe"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 38,
+      "question": "What do you use to hug someone?",
+      "options": [
+        "Arms",
+        "Feet",
+        "Nose",
+        "Knees"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/two-children-hugging-one-has-smile-his-face_951778-73567.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 39,
+      "question": "Which part is at the end of your arm?",
+      "options": [
+        "Neck",
+        "Hand",
+        "Foot",
+        "Head"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 40,
+      "question": "What helps you to smell a flower?",
+      "options": [
+        "Ear",
+        "Hand",
+        "Nose",
+        "Eye"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/little-girl-holding-flower-white-background_1308-88760.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 41,
+      "question": "Which body part is used to talk?",
+      "options": [
+        "Nose",
+        "Ear",
+        "Mouth",
+        "Elbow"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 42,
+      "question": "Where are your shoulders?",
+      "options": [
+        "Between your head and arms",
+        "On your leg",
+        "Below your feet",
+        "On your hand"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/shoulder-pain-red-spot-arm-joint-injury_81894-9074.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 43,
+      "question": "What do we use to stand?",
+      "options": [
+        "Hands",
+        "Arms",
+        "Legs",
+        "Ears"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 44,
+      "question": "Which part do you shake when greeting?",
+      "options": [
+        "Foot",
+        "Ear",
+        "Nose",
+        "Hand"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 45,
+      "question": "Which part helps you bend your foot?",
+      "options": [
+        "Ankle",
+        "Wrist",
+        "Chin",
+        "Back"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 46,
+      "question": "How many fingers do you have on one hand?",
+      "options": [
+        "Four",
+        "Five",
+        "Six",
+        "Ten"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/hand_1308-83887.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 47,
+      "question": "Which part helps you carry a backpack?",
+      "options": [
+        "Shoulders",
+        "Hands",
+        "Ears",
+        "Hips"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/boy-with-green-backpack-walking_1308-8923.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 48,
+      "question": "What do you use to look around?",
+      "options": [
+        "Nose",
+        "Legs",
+        "Eyes",
+        "Elbows"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 49,
+      "question": "Look at this image: What is this?",
+      "options": [
+        "Mouth",
+        "Nose",
+        "Ear",
+        "Eye"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/human-nose-cartoon-vector-icon-illustration-education-object-icon-isolated-flat-vector_138676-10391.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 50,
+      "question": "Which part do we use to whistle?",
+      "options": [
+        "Tongue",
+        "Nose",
+        "Ear",
+        "Mouth"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 51,
+      "question": "How many toes do you have in total?",
+      "options": [
+        "Five",
+        "Ten",
+        "Twenty",
+        "Eight"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/hand-drawn-foot-cartoon-illustration_23-2151086600.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 52,
+      "question": "Which part helps your legs to move?",
+      "options": [
+        "Wrist",
+        "Mouth",
+        "Neck",
+        "Knee"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 53,
+      "question": "Where do you wear sunglasses?",
+      "options": [
+        "On your eyes",
+        "On your nose",
+        "On your feet",
+        "On your ears"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/portrait-boy-with-yellow-hair-blue-eyes_1308-157218.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 54,
+      "question": "What do you use to draw a picture?",
+      "options": [
+        "Legs",
+        "Arms",
+        "Hands",
+        "Nose"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 55,
+      "question": "What helps you walk?",
+      "options": [
+        "Hands",
+        "Eyes",
+        "Legs",
+        "Teeth"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 56,
+      "question": "What do you use to smile?",
+      "options": [
+        "Eyes",
+        "Ears",
+        "Mouth",
+        "Nose"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 57,
+      "question": "Which one do you use to kick a ball?",
+      "options": [
+        "Foot",
+        "Head",
+        "Elbow",
+        "Hand"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 58,
+      "question": "Look at the picture. What are these?",
+      "options": [
+        "Eyes",
+        "Nose",
+        "Ears",
+        "Teeth"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-vector/orange-ear-with-two-ears-that-say-ear_1104560-3572.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 59,
+      "question": "Look at the picture. What is this?",
+      "options": [
+        "Nose",
+        "Finger",
+        "Foot",
+        "Mouth"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/premium-vector/vibrant-cartoon-mouth-smiles-with-white-teeth-ideal-health-beauty-projects-image-features-happy-woman-with-pink-lips-red-tongue-conveying-oral-hygiene-messages_102902-9676.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 60,
+      "question": "Which part do you use to wave \"hello\"?",
+      "options": [
+        "Head",
+        "Nose",
+        "Hand",
+        "Eye"
+      ],
+      "type": "text",
+      "answer": 2
+    }
+  ]
+}

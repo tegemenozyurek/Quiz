@@ -1,0 +1,731 @@
+{
+  "category": "FOOD",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which one is a fruit?",
+      "options": [
+        "Carrot",
+        "Potato",
+        "Apple",
+        "Onion"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 2,
+      "question": "Which food is sweet?",
+      "options": [
+        "Chocolate",
+        "Bread",
+        "Rice",
+        "Chicken"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 3,
+      "question": "Which one is a vegetable?",
+      "options": [
+        "Banana",
+        "Carrot",
+        "Cake",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 4,
+      "question": "What do we drink in the morning?",
+      "options": [
+        "Pizza",
+        "Juice",
+        "Bread",
+        "Cheese"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 5,
+      "question": "Which food is round and has cheese?",
+      "options": [
+        "Ice cream",
+        "Burger",
+        "Pizza",
+        "Sausage"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 6,
+      "question": "Which one is a dairy product?",
+      "options": [
+        "Egg",
+        "Bread",
+        "Milk",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 7,
+      "question": "Which one do we eat with ketchup?",
+      "options": [
+        "Fries",
+        "Apple",
+        "Bread",
+        "Cake"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 8,
+      "question": "What food is made from flour and often toasted?",
+      "options": [
+        "Rice",
+        "Bread",
+        "Egg",
+        "Cheese"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 9,
+      "question": "Which one is a cold dessert?",
+      "options": [
+        "Soup",
+        "Ice cream",
+        "Pizza",
+        "Rice"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 10,
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Orange",
+        "Banana",
+        "Apple",
+        "Grape"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 11,
+      "question": "Which food is often eaten for breakfast?",
+      "options": [
+        "Egg",
+        "Soup",
+        "Cake",
+        "Chips"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 12,
+      "question": "What drink is made from fruit?",
+      "options": [
+        "Milk",
+        "Juice",
+        "Water",
+        "Tea"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 13,
+      "question": "Which one is a type of meat?",
+      "options": [
+        "Fish",
+        "Banana",
+        "Ice cream",
+        "Cheese"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/hand-drawn-sardine-illustration_23-2149017235.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 14,
+      "question": "Which food is crunchy and salty?",
+      "options": [
+        "Bread",
+        "Chocolate",
+        "Chips",
+        "Yogurt"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 15,
+      "question": "What is a red fruit often used in salad?",
+      "options": [
+        "Potato",
+        "Tomato",
+        "Onion",
+        "Broccoli"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 16,
+      "question": "What food is sweet and baked in the oven?",
+      "options": [
+        "Cake",
+        "Cheese",
+        "Corn",
+        "Fish"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 17,
+      "question": "Which one is a drink?",
+      "options": [
+        "Sandwich",
+        "Lemonade",
+        "Apple",
+        "Toast"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 18,
+      "question": "Which vegetable is green and looks like a tree?",
+      "options": [
+        "Onion",
+        "Broccoli",
+        "Carrot",
+        "Lettuce"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 19,
+      "question": "What food is made with meat in a bun?",
+      "options": [
+        "Salad",
+        "Hamburger",
+        "Pancake",
+        "Cookie"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 20,
+      "question": "Which food is frozen and sweet?",
+      "options": [
+        "Ice cream",
+        "Cheese",
+        "Tomato",
+        "Bread"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 21,
+      "question": "Which one is a healthy snack?",
+      "options": [
+        "Candy",
+        "Chips",
+        "Apple",
+        "Soda"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 22,
+      "question": "Which drink is hot?",
+      "options": [
+        "Tea",
+        "Juice",
+        "Water",
+        "Lemonade"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 23,
+      "question": "Which food is this?",
+      "options": [
+        "Omelette",
+        "Bread",
+        "Salad",
+        "Apple pie"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-psd/delicious-omelette-with-herbs-red-peppers-plate_84443-40085.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 24,
+      "question": "Which food do we eat with a spoon?",
+      "options": [
+        "Soup",
+        "Sandwich",
+        "Fries",
+        "Cake"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 25,
+      "question": "What food is soft and sweet, often with chocolate chips?",
+      "options": [
+        "Pizza",
+        "Cookie",
+        "Cheese",
+        "Egg"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 26,
+      "question": "What do we eat in a bowl with milk?",
+      "options": [
+        "Cereal",
+        "Bread",
+        "Rice",
+        "Pancake"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 27,
+      "question": "Which one is made from tomatoes?",
+      "options": [
+        "Ketchup",
+        "Juice",
+        "Cake",
+        "Cheese"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 28,
+      "question": "Which one is NOT a fruit?",
+      "options": [
+        "Apple",
+        "Carrot",
+        "Orange",
+        "Banana"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 29,
+      "question": "Which food is used in sandwiches?",
+      "options": [
+        "Bread",
+        "Ice cream",
+        "Pasta",
+        "Cake"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-photo/isolated-turkish-kebab-baguette-with-generous-portion-vegetables-properly-grilled-veal-chicken-meat_341862-7888.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 30,
+      "question": "What food is long and thin, eaten with sauce?",
+      "options": [
+        "Burger",
+        "Fries",
+        "Spaghetti",
+        "Toast"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 31,
+      "question": "What drink is made with lemons?",
+      "options": [
+        "Milk",
+        "Lemonade",
+        "Soda",
+        "Tea"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 32,
+      "question": "Which food is grilled or fried and comes from a bird?",
+      "options": [
+        "Chicken",
+        "Cheese",
+        "Egg",
+        "Carrot"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-photo/front-view-white-chicken-eggs-inside-basket-with-towel-dark-surface_140725-103357.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 33,
+      "question": "What do we eat on a birthday?",
+      "options": [
+        "Chips",
+        "Cake",
+        "Sandwich",
+        "Bread"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 34,
+      "question": "Which food grows on a tree?",
+      "options": [
+        "Fish",
+        "Carrot",
+        "Banana",
+        "Bread"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 35,
+      "question": "Which food is orange and crunchy?",
+      "options": [
+        "Carrot",
+        "Apple",
+        "Cheese",
+        "Rice"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 36,
+      "question": "What is cold and made with milk and sugar?",
+      "options": [
+        "Cake",
+        "Bread",
+        "Ice cream",
+        "Cereal"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 37,
+      "question": "Which food is usually eaten with syrup?",
+      "options": [
+        "Pancake",
+        "Egg",
+        "Pizza",
+        "Burger"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 38,
+      "question": "What is red and used in salads?",
+      "options": [
+        "Banana",
+        "Tomato",
+        "Cheese",
+        "Egg"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 39,
+      "question": "Which food is thin and flat, often served at breakfast?",
+      "options": [
+        "Spaghetti",
+        "Pancake",
+        "Chicken",
+        "Cookie"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 40,
+      "question": "Which one is a hot drink?",
+      "options": [
+        "Tea",
+        "Lemonade",
+        "Juice",
+        "Water"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 41,
+      "question": "Which one is used to make sandwiches?",
+      "options": [
+        "Rice",
+        "Bread",
+        "Ice cream",
+        "Yogurt"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 42,
+      "question": "Which food is green and leafy?",
+      "options": [
+        "Lettuce",
+        "Cake",
+        "Cheese",
+        "Burger"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 43,
+      "question": "What do we usually drink at breakfast?",
+      "options": [
+        "Juice",
+        "Cola",
+        "Soup",
+        "Lemonade"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 44,
+      "question": "Which food is spicy and eaten with rice?",
+      "options": [
+        "Cake",
+        "Curry",
+        "Ice cream",
+        "Banana"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 45,
+      "question": "What do we eat with butter or jam?",
+      "options": [
+        "Pasta",
+        "Bread",
+        "Chicken",
+        "Cheese"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 46,
+      "question": "What do we put on a birthday cake?",
+      "options": [
+        "Fork",
+        "Knife",
+        "Candles",
+        "Spoon"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/birthday-cake-sweet-cream-pie-with-candles-illustration_1284-52975.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 47,
+      "question": "Which food is often eaten with spaghetti?",
+      "options": [
+        "Meatballs",
+        "Bread",
+        "Ice cream",
+        "Corn"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 48,
+      "question": "Which food is long, yellow, and sweet?",
+      "options": [
+        "Orange",
+        "Banana",
+        "Carrot",
+        "Grape"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 49,
+      "question": "Which one is not a drink?",
+      "options": [
+        "Water",
+        "Milk",
+        "Sandwich",
+        "Juice"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 50,
+      "question": "Which one is a snack?",
+      "options": [
+        "Chips",
+        "Steak",
+        "Rice",
+        "Egg"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 51,
+      "question": "Which food is boiled and sometimes mashed?",
+      "options": [
+        "Apple",
+        "Potato",
+        "Cake",
+        "Lettuce"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 52,
+      "question": "Which fruit is small, red, and sweet?",
+      "options": [
+        "Cherry",
+        "Watermelon",
+        "Apple",
+        "Banana"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 53,
+      "question": "Which one is usually grilled?",
+      "options": [
+        "Chicken",
+        "Ice cream",
+        "Bread",
+        "Yogurt"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 54,
+      "question": "Which of these is not healthy?",
+      "options": [
+        "Candy",
+        "Apple",
+        "Carrot",
+        "Yogurt"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 55,
+      "question": "What is a round red fruit?",
+      "options": [
+        "Tomato",
+        "Lettuce",
+        "Bread",
+        "Cheese"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 56,
+      "question": "What do we eat in the summer to cool down?",
+      "options": [
+        "Soup",
+        "Hot chocolate",
+        "Ice cream",
+        "Tea"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 57,
+      "question": "Which one is not food?",
+      "options": [
+        "Burger",
+        "Apple",
+        "Cup",
+        "Egg"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 58,
+      "question": "Which food has seeds inside?",
+      "options": [
+        "Grape",
+        "Cheese",
+        "Bread",
+        "Chicken"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 59,
+      "question": "Which drink is fizzy?",
+      "options": [
+        "Juice",
+        "Cola",
+        "Milk",
+        "Tea"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 60,
+      "question": "What do we eat with a fork and knife?",
+      "options": [
+        "Steak",
+        "Apple",
+        "Cookie",
+        "Sandwich"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-photo/beefsteak-portion-rustic-table_23-2148167638.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    }
+  ]
+} 

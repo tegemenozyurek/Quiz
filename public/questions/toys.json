@@ -1,0 +1,751 @@
+{
+  "category": "TOYS",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which one is a toy you can hug?",
+      "options": [
+        "Car",
+        "Teddy bear",
+        "Chair",
+        "Plate"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/premium-vector/watercolor-hand-draw-illustration-brown-teddy-bear-can-be-used-cards-invitations-baby-shower-posters-with-white-isolated-background_142565-1559.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 2,
+      "question": "Which one can you ride?",
+      "options": [
+        "Ball",
+        "Puzzle",
+        "Bike",
+        "Pencil"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 3,
+      "question": "Which toy has wheels?",
+      "options": [
+        "Truck",
+        "Book",
+        "Apple",
+        "Cup"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 4,
+      "question": "Which one is used to build things?",
+      "options": [
+        "Teddy",
+        "Blocks",
+        "Drum",
+        "Spoon"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/building-blocks-growth_1308-170446.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 5,
+      "question": "Which toy can make music?",
+      "options": [
+        "Ball",
+        "Train",
+        "Drum",
+        "Brush"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/drum-toy-background_395-2147490908.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 6,
+      "question": "Which toy is this?",
+      "options": [
+        "Book",
+        "Train",
+        "Doll",
+        "Box"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-vector/train-riding-track_1308-81839.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 7,
+      "question": "Which toy can fly?",
+      "options": [
+        "Plane",
+        "Teddy",
+        "Hammer",
+        "Balloon"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 8,
+      "question": "Which one is NOT a toy?",
+      "options": [
+        "Truck",
+        "Drum",
+        "Blocks",
+        "Apple"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 9,
+      "question": "Which toy do girls like to play with?",
+      "options": [
+        "Drum",
+        "Train",
+        "Truck",
+        "Doll"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/premium-vector/illustration-doll-pink-dress-slip-cute-doll-who-sits-isolated-white-background_149452-523.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 10,
+      "question": "Which one can you stack?",
+      "options": [
+        "Blocks",
+        "Ball",
+        "Plane",
+        "Crayon"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 11,
+      "question": "Which toy is soft?",
+      "options": [
+        "Teddy bear",
+        "Drum",
+        "Puzzle",
+        "Truck"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 12,
+      "question": "Which one has wings?",
+      "options": [
+        "Teddy",
+        "Train",
+        "Blocks",
+        "Plane"
+      ],
+      "type": "image",
+      "answer": 3
+    },
+    {
+      "id": 13,
+      "question": "Which one can you pull?",
+      "options": [
+        "Truck",
+        "Pencil",
+        "Book",
+        "Chair"
+      ],
+      "type": "image",
+      "answer": 0
+    },
+    {
+      "id": 14,
+      "question": "Which one makes sound?",
+      "options": [
+        "Crayon",
+        "Puzzle",
+        "Drum",
+        "Book"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 15,
+      "question": "Which toy moves on rails?",
+      "options": [
+        "Train",
+        "Plane",
+        "Teddy",
+        "Block"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 16,
+      "question": "Which toy can be built into shapes?",
+      "options": [
+        "Apple",
+        "Blocks",
+        "Teddy",
+        "Ball"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 17,
+      "question": "Which one is a vehicle?",
+      "options": [
+        "Truck",
+        "Spoon",
+        "Teddy",
+        "Socks"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/hand-drawn-transport-truck_23-2149161394.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 18,
+      "question": "Which toy can you bounce?",
+      "options": [
+        "Train",
+        "Teddy",
+        "Ball",
+        "Chair"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/doodle-soccer-ball_1034-741.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 19,
+      "question": "Which toy do you push and pull?",
+      "options": [
+        "Truck",
+        "Book",
+        "Brush",
+        "Sock"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 20,
+      "question": "Which toy is used in music class?",
+      "options": [
+        "Doll",
+        "Drum",
+        "Blocks",
+        "Plane"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 21,
+      "question": "Which toy goes \"choo choo\"?",
+      "options": [
+        "Drum",
+        "Plane",
+        "Train",
+        "Teddy"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-vector/realistic-train-vector-illustration-concept_1253202-18835.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 22,
+      "question": "What is this?",
+      "options": [
+        "Train",
+        "Truck",
+        "Teddy",
+        "Drum"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/premium-vector/construction-vehicle-concept-illustration_1015832-993.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 23,
+      "question": "Which one is not a toy?",
+      "options": [
+        "Truck",
+        "Ball",
+        "Plate",
+        "Shirt"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 24,
+      "question": "Which one is NOT a toy?",
+      "options": [
+        "Puzzle",
+        "Teddy",
+        "Plate",
+        "Plane"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 25,
+      "question": "Which toy helps you learn shapes?",
+      "options": [
+        "Blocks",
+        "Train",
+        "Teddy",
+        "Spoon"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/bright-colored-vector-blank-bricks-building-tower_124848-904.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 26,
+      "question": "Where does the plane go?",
+      "options": [
+        "In the sky",
+        "On the floor",
+        "In the water",
+        "On the table"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/propeller-plane-cartoon-vehicle-illustration_576561-1247.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 27,
+      "question": "Which toy is in the box?",
+      "options": [
+        "Train",
+        "Drum",
+        "Teddy",
+        "Blocks"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-photo/png-donation-box-bear-toy-representation_53876-817241.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 28,
+      "question": "Which toy moves on the road?",
+      "options": [
+        "Drum",
+        "Truck",
+        "Plane",
+        "Teddy"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 29,
+      "question": "Which toy has pieces to fit together?",
+      "options": [
+        "Puzzle",
+        "Drum",
+        "Ball",
+        "Plate"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/illustration-puzzle-icon-colors-red-yellow-green-blue-simple-vector-isolated_888470-1004.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 30,
+      "question": "Which one is not a toy?",
+      "options": [
+        "Truck",
+        "Teddy",
+        "Egg",
+        "Ball"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 31,
+      "question": "Which toy is red?",
+      "options": [
+        "Red plane",
+        "Blue train",
+        "Green truck",
+        "Yellow drum"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/colorful-cartoon-airplane-white-background_1308-165197.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 32,
+      "question": "Which toy is usually red, blue, or yellow?",
+      "options": [
+        "Brush",
+        "Socks",
+        "Cup",
+        "Blocks"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 33,
+      "question": "Which toy is dirty?",
+      "options": [
+        "Clean truck",
+        "Dirty teddy",
+        "Clean drum",
+        "Clean train"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/free-photo/diverse-people-refugee-camps_23-2151561451.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 34,
+      "question": "How many blocks do you see?",
+      "options": [
+        "Two",
+        "Three",
+        "Four",
+        "Five"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/premium-photo/colored-children-cubes-white-isolated_93675-61009.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 35,
+      "question": "Which toy is under the table?",
+      "options": [
+        "Teddy",
+        "Drum",
+        "Train",
+        "Blocks"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/yellow-train-toy-cartoon-sticker_1308-77878.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 36,
+      "question": "Which toy can crash into others?",
+      "options": [
+        "Truck",
+        "Teddy",
+        "Puzzle",
+        "Drum"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/truck-illustration_219965-32.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 37,
+      "question": "Which toy can be round?",
+      "options": [
+        "Ball",
+        "Teddy",
+        "Train",
+        "Crayon"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 38,
+      "question": "Which toy makes you think hard?",
+      "options": [
+        "Doll",
+        "Drum",
+        "Train",
+        "Puzzle"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 39,
+      "question": "Which toy do you ride outdoors?",
+      "options": [
+        "Ball",
+        "Bike",
+        "Teddy",
+        "Puzzle"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 40,
+      "question": "Which toy has numbers and letters?",
+      "options": [
+        "Learning blocks",
+        "Plane",
+        "Truck",
+        "Drum"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 41,
+      "question": "Which one is soft and cuddly?",
+      "options": [
+        "Blocks",
+        "Puzzle",
+        "Teddy",
+        "Crayon"
+      ],
+      "type": "text",
+      "answer": 2
+    },
+    {
+      "id": 42,
+      "question": "Which toy has a horn sound?",
+      "options": [
+        "Ball",
+        "Truck",
+        "Book",
+        "Apple"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 43,
+      "question": "Which toy do you throw and catch?",
+      "options": [
+        "Book",
+        "Plate",
+        "Block",
+        "Ball"
+      ],
+      "type": "text",
+      "answer": 3
+    },
+    {
+      "id": 44,
+      "question": "Which toy is found on a playground?",
+      "options": [
+        "Ball",
+        "Spoon",
+        "Book",
+        "Chair"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/free-vector/beach-ball_1308-83918.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 45,
+      "question": "Which toy can be remote-controlled?",
+      "options": [
+        "Teddy",
+        "Drum",
+        "Car",
+        "Cup"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-vector/compact-car-cartoon-sticker-white-background_1308-76736.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 46,
+      "question": "Which toy is in many colors and small pieces?",
+      "options": [
+        "Puzzle",
+        "Blocks",
+        "Train",
+        "Plane"
+      ],
+      "type": "image",
+      "answer": 1,
+      "image": "https://img.freepik.com/premium-vector/bright-colored-vector-blank-bricks-building-tower_124848-904.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 47,
+      "question": "Which toy can fly but is not real?",
+      "options": [
+        "Toy plane",
+        "Cat",
+        "Cup",
+        "Hat"
+      ],
+      "type": "image",
+      "answer": 0,
+      "image": "https://img.freepik.com/premium-vector/blue-biplane-toy-aircraft-icon_178650-5434.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_items_boosted&w=740"
+    },
+    {
+      "id": 48,
+      "question": "Which toy can have sirens?",
+      "options": [
+        "Truck",
+        "Blocks",
+        "Teddy",
+        "Police car"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-vector/sticker-design-with-side-view-police-car-isolated_1308-76459.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 49,
+      "question": "Which toy do you bring to a party?",
+      "options": [
+        "Teddy",
+        "Drum",
+        "Plane",
+        "Truck"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 50,
+      "question": "Which toy has a steering wheel?",
+      "options": [
+        "Toy car",
+        "Teddy",
+        "Puzzle",
+        "Book"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 51,
+      "question": "Which toy do you hit with sticks?",
+      "options": [
+        "Ball",
+        "Puzzle",
+        "Drum",
+        "Book"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-psd/musical-instrument-isolated_23-2151007006.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 52,
+      "question": "Which toy is used in stacking games?",
+      "options": [
+        "Blocks",
+        "Truck",
+        "Teddy",
+        "Train"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 53,
+      "question": "Which toy comes in jigsaw pieces?",
+      "options": [
+        "Plane",
+        "Ball",
+        "Drum",
+        "Puzzle"
+      ],
+      "type": "image",
+      "answer": 3,
+      "image": "https://img.freepik.com/free-psd/3d-puzzle-pieces_23-2148938940.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 54,
+      "question": "Which toy is shaped like a cube?",
+      "options": [
+        "Block",
+        "Plane",
+        "Drum",
+        "Book"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 55,
+      "question": "Which toy is often found in a music set?",
+      "options": [
+        "Puzzle",
+        "Drum",
+        "Teddy",
+        "Cup"
+      ],
+      "type": "text",
+      "answer": 1
+    },
+    {
+      "id": 56,
+      "question": "What toy is made of wood?",
+      "options": [
+        "Blocks",
+        "Teddy",
+        "Plane",
+        "Drum"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 57,
+      "question": "Which toy goes on tracks?",
+      "options": [
+        "Truck",
+        "Plane",
+        "Train",
+        "Teddy"
+      ],
+      "type": "image",
+      "answer": 2,
+      "image": "https://img.freepik.com/free-photo/transport-concept-with-train_23-2148959670.jpg?uid=P186087346&ga=GA1.1.494641882.1746008799&semt=ais_hybrid&w=740"
+    },
+    {
+      "id": 58,
+      "question": "Which one is NOT made for playing?",
+      "options": [
+        "Spoon",
+        "Puzzle",
+        "Blocks",
+        "Truck"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 59,
+      "question": "Which toy can be part of a set with a toy car and track?",
+      "options": [
+        "Train",
+        "Drum",
+        "Puzzle",
+        "Ball"
+      ],
+      "type": "text",
+      "answer": 0
+    },
+    {
+      "id": 60,
+      "question": "You want to sleep. Which toy do you hug?",
+      "options": [
+        "Blocks",
+        "Drum",
+        "Teddy",
+        "Truck"
+      ],
+      "type": "text",
+      "answer": 2
+    }
+  ]
+}
