@@ -1063,52 +1063,68 @@ function App() {
                   background: '#fff',
                   borderRadius: '24px',
                   boxShadow: '0 2px 16px #0001',
-                  padding: '20px 16px 16px 16px',
+                  padding: '20px',
                   minHeight: '180px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   marginBottom: '16px',
                   boxSizing: 'border-box',
                   flex: '0 0 auto',
-                  overflow: 'hidden',
-                  ...(currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image)
-                    ? { justifyContent: 'center', alignItems: 'center', flex: 1, height: '180px', minHeight: '180px', padding: 0 } : {})
+                  overflow: 'hidden'
                 }}
               >
                 {currentQuestion && currentQuestion.type === 'image' && currentQuestion.image ? (
-                  <div className="question-image" style={{marginBottom:12}}>
-                    <img 
-                      src={currentQuestion.image} 
-                      alt="Question image" 
-                      className="question-img"
-                      style={{width:120,height:120,objectFit:'contain',background:'#fff',borderRadius:16,boxShadow:'0 2px 8px #0001',border:'2px solid #eee'}}
-                    />
-                  </div>
-                ) : null}
-                <div
-                  style={{
-                    marginBottom: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image) ? 0 : 10,
-                    fontSize:
-                      currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image)
-                        ? '1.25rem'
-                        : '1.08rem',
+                  <>
+                    <div className="question-image" style={{
+                      marginBottom: 12,
+                      width: '120px',
+                      height: '120px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <img 
+                        src={currentQuestion.image} 
+                        alt="Question image" 
+                        className="question-img"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                          background: '#fff',
+                          borderRadius: 16,
+                          boxShadow: '0 2px 8px #0001',
+                          border: '2px solid #eee'
+                        }}
+                      />
+                    </div>
+                    <div style={{
+                      fontSize: '1.1rem',
+                      fontWeight: 600,
+                      textAlign: 'center',
+                      wordBreak: 'break-word',
+                      width: '100%'
+                    }}>
+                      {currentQuestion?.question}
+                    </div>
+                  </>
+                ) : (
+                  <div style={{
+                    fontSize: '1.25rem',
                     fontWeight: 600,
                     textAlign: 'center',
                     wordBreak: 'break-word',
                     width: '100%',
+                    height: '100%',
                     display: 'flex',
-                    alignItems:
-                      currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image)
-                        ? 'center'
-                        : 'flex-start',
-                    justifyContent: 'center',
-                    flex: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image) ? 1 : undefined,
-                    height: currentQuestion && (!currentQuestion.type || currentQuestion.type !== 'image' || !currentQuestion.image) ? '100%' : undefined
-                  }}
-                >
-                  {currentQuestion?.question}
-                </div>
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    {currentQuestion?.question}
+                  </div>
+                )}
               </div>
               <div className="options" style={{
                 width: '100%',
