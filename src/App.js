@@ -1320,7 +1320,8 @@ function App() {
             justifyContent: 'flex-start',
             minHeight: '100vh',
             padding: '30px 20px',
-            background: '#7B4AE2'
+            background: '#7B4AE2',
+            overflowY: 'auto'
           }}>
             <div style={{
               fontSize: 36,
@@ -1349,8 +1350,8 @@ function App() {
                 textAlign: 'center',
                 fontWeight: '600'
               }}>
-                Final Score: <span style={{color: '#4ECDC4', fontWeight: '800'}}>{score}</span>
-            </div>
+                Final Score: <span style={{color: '#4ECDC4', fontWeight: '800'}}>{allAnswersHistory.filter((ans, i) => ans === allQuestionsHistory[i].answer).length}</span>
+              </div>
 
               <div style={{
                 width: '100%',
@@ -1442,14 +1443,10 @@ function App() {
             }}>
               {[1, 2, 3].map(round => {
                 const startIndex = (round - 1) * 3;
-                const endIndex = startIndex + 3; // Always show 3 slots per round
+                const endIndex = startIndex + 3;
                 const roundQuestions = allQuestionsHistory.slice(startIndex, endIndex);
                 const roundAnswers = allAnswersHistory.slice(startIndex, endIndex);
                 
-                // Show the round even if there are no questions
-                const correctCount = roundAnswers.filter((ans, i) => ans === roundQuestions[i]?.answer).length;
-                const wrongCount = roundAnswers.length - correctCount;
-
                 return (
                   <div key={round} style={{
                     background: 'rgba(255,255,255,0.1)',
@@ -1485,8 +1482,8 @@ function App() {
                         }}>
                           {roundQuestions.length > 0 ? (
                             <>
-                              <span style={{color: '#4ECDC4'}}>✓ {correctCount}</span>
-                              <span style={{color: '#ff4444'}}>✗ {wrongCount}</span>
+                              <span style={{color: '#4ECDC4'}}>✓ {roundAnswers.filter((ans, i) => ans === roundQuestions[i].answer).length}</span>
+                              <span style={{color: '#ff4444'}}>✗ {roundAnswers.filter((ans, i) => ans !== roundQuestions[i].answer).length}</span>
                             </>
                           ) : (
                             <span style={{opacity: 0.7}}>Not played</span>
@@ -1511,12 +1508,12 @@ function App() {
                         gap: '15px'
                       }}>
                         {roundQuestions.map((question, index) => {
-                          const absoluteIndex = startIndex + index;
-                          const answer = roundAnswers[index];
+                          const userAnswer = roundAnswers[index];
+                          const isCorrect = userAnswer === question.answer;
                           
                           return (
                             <div key={index} style={{
-                              background: answer === question.answer ? 
+                              background: isCorrect ? 
                                 'rgba(78,205,196,0.2)' : 'rgba(255,75,75,0.2)',
                               padding: '15px',
                               borderRadius: '12px',
@@ -1524,17 +1521,33 @@ function App() {
                             }}>
                               <div style={{
                                 display: 'flex',
-                                alignItems: 'center',
+                                alignItems: 'flex-start',
                                 gap: '10px',
-                                marginBottom: '8px'
+                                marginBottom: '12px'
                               }}>
                                 <span style={{
                                   fontSize: '18px',
-                                  opacity: 0.9
+                                  opacity: 0.9,
+                                  marginTop: '2px'
                                 }}>
-                                  {answer === question.answer ? '✓' : '✗'}
+                                  {isCorrect ? '✓' : '✗'}
                                 </span>
-                                <span style={{flex: 1}}>{question.question}</span>
+                                <div style={{flex: 1}}>
+                                  <div style={{marginBottom: '8px'}}>{question.question}</div>
+                                  {question.type === 'image' && question.image && (
+                                    <img 
+                                      src={question.image} 
+                                      alt="Question" 
+                                      style={{
+                                        width: '100%',
+                                        maxWidth: '200px',
+                                        height: 'auto',
+                                        borderRadius: '8px',
+                                        marginBottom: '8px'
+                                      }}
+                                    />
+                                  )}
+                                </div>
                               </div>
                               <div style={{
                                 display: 'grid',
@@ -1543,15 +1556,36 @@ function App() {
                                 fontSize: '14px',
                                 opacity: 0.9
                               }}>
-                                {[question.option0, question.option1, question.option2, question.option3].map((option, optIndex) => (
+                                {question.options.map((option, optIndex) => (
                                   <div key={optIndex} style={{
                                     padding: '8px',
-                                    background: answer === optIndex ? 
+                                    background: userAnswer === optIndex ? 
                                       (question.answer === optIndex ? 'rgba(78,205,196,0.3)' : 'rgba(255,75,75,0.3)') :
                                       (question.answer === optIndex ? 'rgba(78,205,196,0.3)' : 'rgba(255,255,255,0.1)'),
-                                    borderRadius: '8px'
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '6px'
                                   }}>
+                                    {userAnswer === optIndex && (
+                                      <span style={{
+                                        fontSize: '14px',
+                                        opacity: 0.8
+                                      }}>
+                                        {question.answer === optIndex ? '✓' : '✗'}
+                                      </span>
+                                    )}
                                     {option}
+                                    {question.answer === optIndex && userAnswer !== optIndex && (
+                                      <span style={{
+                                        marginLeft: 'auto',
+                                        fontSize: '12px',
+                                        color: '#4ECDC4',
+                                        fontWeight: '600'
+                                      }}>
+                                        (Correct)
+                                      </span>
+                                    )}
                                   </div>
                                 ))}
                               </div>
