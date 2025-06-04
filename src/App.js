@@ -231,48 +231,28 @@ function App() {
 
       setTimeout(() => {
         setShowCategoryReveal(false);
+        let selectedQuestions = [];
+
         if (selectedCategoryName === 'toys' && toysQuestions.length > 0) {
-          const shuffled = shuffleQuestions(toysQuestions).slice(0, 3);
-          setQuestionsForRound(shuffled);
-          setRandomizedQuestions(shuffled);
-          setGameState('question');
-          setQuestionIndex(0);
-          setCurrentQuestion(shuffled[0]);
+          selectedQuestions = shuffleQuestions([...toysQuestions]).slice(0, 3);
         } else if (selectedCategoryName === 'colors' && colorsQuestions.length > 0) {
-          const shuffled = shuffleQuestions(colorsQuestions).slice(0, 3);
-          setQuestionsForRound(shuffled);
-          setRandomizedQuestions(shuffled);
-          setGameState('question');
-          setQuestionIndex(0);
-          setCurrentQuestion(shuffled[0]);
+          selectedQuestions = shuffleQuestions([...colorsQuestions]).slice(0, 3);
         } else if (selectedCategoryName === 'body parts' && bodyPartsQuestions.length > 0) {
-          const shuffled = shuffleQuestions(bodyPartsQuestions).slice(0, 3);
-          setQuestionsForRound(shuffled);
-          setRandomizedQuestions(shuffled);
-          setGameState('question');
-          setQuestionIndex(0);
-          setCurrentQuestion(shuffled[0]);
+          selectedQuestions = shuffleQuestions([...bodyPartsQuestions]).slice(0, 3);
         } else if (selectedCategoryName === 'animals' && animalsQuestions.length > 0) {
-          const shuffled = shuffleQuestions(animalsQuestions).slice(0, 3);
-          setQuestionsForRound(shuffled);
-          setRandomizedQuestions(shuffled);
-          setGameState('question');
-          setQuestionIndex(0);
-          setCurrentQuestion(shuffled[0]);
+          selectedQuestions = shuffleQuestions([...animalsQuestions]).slice(0, 3);
         } else if (selectedCategoryName === 'food' && foodQuestions.length > 0) {
-          const shuffled = shuffleQuestions(foodQuestions).slice(0, 3);
-          setQuestionsForRound(shuffled);
-          setRandomizedQuestions(shuffled);
-          setGameState('question');
-          setQuestionIndex(0);
-          setCurrentQuestion(shuffled[0]);
+          selectedQuestions = shuffleQuestions([...foodQuestions]).slice(0, 3);
         } else if (selectedCategoryName === 'verbs' && actionVerbsQuestions.length > 0) {
-          const shuffled = shuffleQuestions(actionVerbsQuestions).slice(0, 3);
-          setQuestionsForRound(shuffled);
-          setRandomizedQuestions(shuffled);
+          selectedQuestions = shuffleQuestions([...actionVerbsQuestions]).slice(0, 3);
+        }
+
+        if (selectedQuestions.length > 0) {
+          setQuestionsForRound(selectedQuestions);
+          setRandomizedQuestions(selectedQuestions);
           setGameState('question');
           setQuestionIndex(0);
-          setCurrentQuestion(shuffled[0]);
+          setCurrentQuestion(selectedQuestions[0]);
         } else {
           setGameState('result');
         }
